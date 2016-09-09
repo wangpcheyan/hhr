@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>慧诚咨询企业管理后台</title>
+    <meta name="author" content="kinwai">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/bootstrap-select.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="http://cdn.bootcss.com/selectivizr/1.0.2/selectivizr.js"></script>
+    <![endif]-->
+    <!-- Favicons -->
+    <!--html5shiv.min.js认识html5新标签 -->
+</head>
+<body>
+    <div class="iframe">
+        <div class="menu">
+            <div class="logo">
+                <img src="img/common/logo.png" height="79" width="79" alt="">
+            </div>
+            <div class="item-box">
+                <div class="item-div current">
+                    <a href="index.html" target="main" class="item"><i class="fa fa-home"></i>首页</a>
+                </div>
+                <div class="item-div ">
+                    <a href="plan.html" target="main" class="item"><i class="fa fa-edit"></i>计划</a>
+                    <div class="childItem-box">
+                        <div class="childItem"><i class="fa fa-user"></i><a href="plan.html" target="main">我的计划</a><i class="fa "></i></div>
+                        <div class="childItem"><i class="fa fa-users"></i><a href="groupplan.html" target="main">计划管理</a><i class="fa "></i></div>
+                    </div>
+                </div>
+                <div class="item-div">
+                    <a href="performance.html" target="main" class="item"><i class="fa fa-line-chart"></i>绩效</a>
+                    <div class="childItem-box">
+                        <div class="childItem"><i class="fa fa-user"></i><a href="performance.html" target="main">我的绩效</a><i class="fa "></i></div>
+                        <div class="childItem"><i class="fa fa-users"></i><a href="groupperformance.html" target="main">绩效管理</a><i class="fa "></i></div>
+                        <div class="childItem"><i class="fa fa-line-chart"></i><a href="JiXiaoShezhi.html" target="main">绩效设置</a><i class="fa "></i></div>
+
+                    </div>
+                </div>
+                <div class="item-div">
+                    <a href="AddWenzhang.html" target="main" class="item"><i class="fa fa-graduation-cap"></i>培训</a>
+                    <div class="childItem-box">
+                        <div class="hasChild">
+                            <div class="thirdMnue"><i class="fa fa-graduation-cap"></i><a>知识管理<i class="down fa fa-angle-down"></i></a></div>
+                            <div class="div_cont" style="display:none;">
+                                <div class="childItem"><a href="AddWenzhang.html" target="main">添加文章</a></div>
+                                <div class="childItem"><a href="WenZhangGuanli.html" target="main">文章管理</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-div">
+                    <a href="JiFenXinchou.html" target="main" class="item"><i class="fa fa-rmb"></i>薪酬</a>
+                    <div class="childItem-box">
+                        <div class="hasChild">
+                            <!--<div class="thirdMnue"><a >薪酬管理<i class="down fa fa-angle-down"></i></a></div>-->
+                            <div class="childItem"><i class="fa fa fa-search"></i><a href="JiFenXinchou.html" target="main">薪酬查看</a><i class="fa "></i></div>
+                            <div class="childItem"><i class="fa fa-wrench"></i><a href="XinchouGuanli.html" target="main">薪酬维护</a><i class="fa "></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-div">
+                    <a href="integral.html" target="main" class="item"><i class="fa fa-bitbucket"></i>积分</a>
+                    <div class="childItem-box">
+                        <!--<div class="hasChild hover_nav">
+                            <div class="thirdMnue"><i class="fa fa-user"></i><a class="" href="#">我的积分<i class="down fa fa-angle-down"></i></a></div>
+                            <div class="childItem"><i class="fa fa-bitbucket"></i><a href="#">积分申请</a></div>
+                            <div class="childItem"><i class="fa fa-bitbucket"></i><a href="#">积分兑换</a></div>
+                            <div class="childItem"><i class="fa fa-bitbucket"></i><a href="#">统计分析</a></div>
+                        </div>-->
+                        <div class="hasChild hover_nav">
+                            <div class="thirdMnue"><i class="fa fa-user"></i><a>我的积分<i class="down fa fa-angle-down"></i></a></div>
+                            <div class="div_cont" style="display:none;">
+                                <div class="childItem"><a href="integral.html" target="main">积分明细</a></div>
+                                <div class="childItem"><a href="JiFenDuihuan.html" target="main">积分兑换</a></div>
+                                <div class="childItem"><a href="JiFenFenxi.html" target="main">积分分析</a></div>
+                            </div>
+                        </div>
+                        <div class="hasChild hover_nav">
+                            <div class="thirdMnue"><i class="fa fa-users"></i><a>积分管理<i class="down fa fa-angle-down"></i></a></div>
+                            <div class="div_cont" style="display:none;">
+                                <div class="childItem"><a href="integralTeam.html" target="main">积分查看</a></div>
+                                <div class="childItem"><a href="JiFenGuize.html" target="main">积分规则</a></div>
+                                <div class="childItem"><a href="JiFenShenhe.html" target="main">积分审核</a></div>
+                                <div class="childItem"><a href="JiFenPaiming.html" target="main">积分排名</a></div>
+                            </div>
+                        </div>
+                        <div class="childItem"><i class="fa fa-bitbucket"></i><a href="JiFenShezhi.html" target="main">积分设置</a><i class="fa "></i></div>
+                        <div class="childItem"><i class="fa fa-credit-card"></i><a href="KaQuanShezhi.html" target="main">卡券设置</a><i class="fa "></i></div>
+                    </div>
+                </div>
+                <div class="item-div">
+                    <a href="JiHuaWanchenglv.html" target="main" class="item"><i class="fa fa-bar-chart-o"></i>报表</a>
+                    <div class="childItem-box">
+                        <div class="hasChild hover_nav">
+                            <div class="thirdMnue"><i class="fa fa-edit"></i><a >计划报表<i class="down fa fa-angle-down"></i></a></div>
+                            <div class="div_cont" style="display:none;">
+                                <div class="childItem"><a href="JiHuaWanchenglv.html" target="main" style="padding-left:29px;">计划完成率</a></div>
+                                <div class="childItem"><a href="JiHuaJieguo.html" target="main">计划结果</a></div>
+                            </div>
+                        </div>
+                        <!--<div class="childItem"><i class="fa fa-line-chart"></i><a href="" target="main">绩效报表<i class="down fa "></i></a></div>
+                        <div class="childItem"><i class="fa fa-bitbucket"></i><a href="" target="main">积分报表<i class="down fa "></i></a></div>-->
+                    </div>
+                </div>
+                <div class="item-div">
+                    <a href="GongsiShezhi.html" target="main" class="item"><i class="fa fa-cog"></i>设置</a>
+                    <div class="childItem-box">
+                        <div class="hasChild">
+                            <div class="thirdMnue"><i class="fa fa-cog"></i><a>系统设置<i class="down fa fa-angle-down"></i></a></div>
+                            <div class="div_cont" style="display:none;">
+                                <div class="childItem"><a href="GongsiShezhi.html" target="main">公司设置</a></div>
+                                <div class="childItem"><a href="ZuzhiWeihu.html" target="main">组织设置</a></div>
+                                <div class="childItem"><a href="GangweiShezhi.html" target="main">职位设置</a></div>
+                                <div class="childItem"><a href="RenyuanShezhi.html" target="main">人员设置</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="search-box">
+                <input type="text" name="word" class="search" placeholder="搜索任务、客户、动态、机会">
+                <span class="fa fa-search"></span>
+            </div>
+            <div class="rightbar">
+                <ul>
+                    <li class="add-new">
+                        <button class="add-btn">
+                            <span class="add-icon fa fa-plus"></span><span class="create">新建</span>
+                        </button>
+                        <ul class="dropdown dropdown-menu">
+                            <li><a href="plan.html"><i class="fa fa-edit"></i>计划</a></li>
+                            <li><a href="performance.html"><i class="fa fa-line-chart"></i>绩效</a></li>
+                            <li><a href="integral.html"><i class="fa fa-bitbucket"></i>积分</a></li>
+                            <li><a href="WenZhangGuanli.html"><i class="fa fa-book"></i>文章</a></li>
+                            <li><a href="RenyuanShezhi.html"><i class="fa fa-users"></i>成员</a></li>
+                        </ul>
+                    </li>
+                    <li class="help"><a href="help_web.html" target="main" class="fa fa-question-circle"><span>帮助</span></a></li>
+                    <li class="msg"><a href="#" class="xinxi_btn fa fa-envelope-o"><span>信息</span><span class="count">1</span></a></li>
+                    <li class="self">
+                        <a class="user fa fa-user"><span>个人</span></a>
+                        <ul class="dropdown dropdown-menu">
+                            <li class="edit">
+                                <a href="userEdit.html" target="main" class="right">编辑</a>
+                                <div class="left"><img src="img/menu/tx.jpg" alt="">罗先生</div>
+                            </li>
+                            <li class="exit li_btn" style="background:none;">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>北京天诚贸易</option>
+                                        <option>北京天诚贸易</option>
+                                        <option>北京天诚贸易</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li class="exit li_btn yq"><a data-toggle="modal" data-target="#yqModal" href="#">邀请成员</a></li>
+                            <li class="exit li_btn"><a href="#">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="body">
+            <iframe id="myframe" frameborder="0" src="index.html" name="main"></iframe>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/app.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+
+    <div class="modal fade layer_title" id="yqModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title  " id="myModalLabel">
+                        邀请成员
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <p style="text-align:center;"><span style="color:#0094ff;">下载二维码</span>，邀请小伙伴加入【北京天成贸易】</p>
+                    <p style="text-align:center;">
+                        <img src="img/common/erweima.png" width="300" height="300" />
+                    </p>
+                    <p style="text-align:center;">
+                        邀请链接:
+                        <input style="width:300px;display:inline-block;text-align:left;" class="form-control" name="start" type="text" value="http://web.2008php.com/tu/2013/0112/98427.html" placeholder="">
+                        <a class="fuzhi_btn" data-toggle="modal" data-target="#myModal">一键复制</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dy-animate dy-fixed animated " style="display:none;">
+        <div class="dy-msg1" style="height:100%;position: relative;">
+            <div class="dy-tle am-cf">
+                <div class="cont">
+                    <select id="basic" class="selectpicker show-tick form-control">
+                        <option>未读（1）</option>
+                        <option>已读（0）</option>
+                    </select>
+                </div>
+                <a href="javascript:;" onclick="set_read()" class="am-fr">全部设为已读</a>
+            </div>
+            <div class="dy-msg-tab">
+                <input type="hidden" id="msg_tid" name="msg_tid" value="0">
+
+                <!--选中状态添加class active-->
+                <a class="active" href="">全部</a>
+                <a href="#">指派我的</a>
+                <a href="#">系统通知</a>
+            </div>
+            <div class="scroller" style="height:100%; overflow: auto">
+                <div id="lists" class="dy-msg3">
+                    <ul style="padding:0;">
+                        <li class="dy-box dy-pointer" onclick="message_view('5783675d18918026348bdac7')">
+                            <div class="dy-txt5 am-round am-margin-right dy-b1"><span class="fa fa-volume-up"></span></div>
+                            <div class="dy-flex">
+                                <div class="dy-box">
+                                    <div class="dy-flex dy-txt1 am-text-truncate">
+                                        系统消息
+                                    </div>
+                                    <div class="dy-txt2">2016-07-11 17:31</div>
+                                </div>
+                                <div class="dy-txt3">【添加员工】将同事们加进来，开始提升效率吧。在PC版点击左下角头像下齿轮图标，选择“系统设置”，进入“员工管理”，点击右上角“邀请成员”，邀请同事们加入。</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dy-loading"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            var divhas = $(".hasChild");
+            var divMnue = divhas.find(".thirdMnue");
+            var divcont = divhas.find(".div_cont");
+            divMnue.on("click", function () {
+                $(this).next(divcont).slideToggle('fast');
+                divcont.not($(this).next(divcont)).slideUp();
+            });
+            divhas.click(function () {
+                $(this).find(".thirdMnue").css("background", "#545456").siblings().css("background", "none");
+            })
+            var divitem = $(".item");
+            divitem.hover(function () {
+                divcont.slideUp();
+            })
+        })
+        //信息显示 隐藏动效切换
+        $(".xinxi_btn").click(function () {
+            if ($(".dy-animate").css("display") == 'none') {
+                $(".dy-animate").addClass("fadeInRight").show();
+            } else {
+                if ($(".dy-animate").hasClass("fadeInRight")) {
+                    $(".dy-animate").addClass("fadeOutRight").removeClass("fadeInRight");
+                } else if (($(".dy-animate").hasClass("fadeOutRight"))) {
+                    $(".dy-animate").addClass("fadeInRight").removeClass("fadeOutRight");
+                }
+            }
+        })
+    </script>
+</body>
+</html>

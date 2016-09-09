@@ -1,0 +1,472 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组织设置</title>
+    <meta name="author" content="kinwai">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/style.pc.css" rel="stylesheet" />
+    <script src="../huihr/WdatePicker.js"></script>
+    <script src="js/jquery.min.js"></script>
+
+
+    <!--开关switch-->
+    <link href="css/bootstrap-switch.min.css" rel="stylesheet" />
+    <script src="js/bootstrap-switch.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="http://cdn.bootcss.com/selectivizr/1.0.2/selectivizr.js"></script>
+    <![endif]-->
+    <!-- Favicons -->
+    <!--html5shiv.min.js认识html5新标签 -->
+</head>
+<body>
+    <div class="jifen_body">
+        <div class="am-sticky-placeholder" style="height: 42px; margin: 0px;">
+            <ul class="am-nav am-nav-tabs dy-show2 " style="margin: 0px;padding:0;">
+                <li class="top_title">
+                    <a href="GongsiShezhi.html">设置</a>
+                    >
+                    <a href="GongsiShezhi.html" style="margin:0;">系统设置</a>
+                    >
+                    <span style="color:#999;padding:0 5px;">组织设置</span>
+                </li>
+            </ul>
+        </div>
+        <div class="zuzhi_btn">
+            <a class="btn new_btn" data-toggle="modal" data-target="#myModal">新建</a>
+            <div class="btn-group">
+                <button type="button" class="btn  btn hr-dropdown dropdown-toggle" data-toggle="dropdown">
+                    更多 <span class="fa fa-angle-down list_down_icon"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a class="aUpdate" data-toggle="modal" data-target="#myModal" href="#">修改</a></li>
+                    <li><a class="aDel" data-toggle="modal" data-target="#delModal" href="#">删除</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#drModal">导入</a></li>
+                    <li><a href="#">导出</a></li>
+                </ul>
+            </div>
+            <!--搜索下拉框-->
+            <div class="search_box">
+                <div class="clearFloat">
+                    <!--搜索按钮-->
+                    <button type="button" class="float btn_search_icon fa fa-search" data-toggle="dropdown"></button>
+
+                    <input type="text" placeholder="点击下拉可高级搜索" class="float search_text form-control">
+
+                    <div class="float" style="position:relative;">
+                        <!--下拉按钮 -->
+                        <button type="button" class="btn_search_down">
+                            <!--下拉框显示时添加class = tran_icon  ，下拉框隐藏时 移除该class  -->
+                            <span class="fa fa-angle-down list_down_icon "></span>
+                        </button>
+                        <!--搜索下拉弹出框-->
+                        <ul class="search_down_box" style="display:none;">
+                            <li>
+                                <div style="padding:20px 0;">
+                                    <span>关键字：</span>
+                                    <input type="text" class="gjz_txt form-control">
+                                    <div class="text-right" style="width:360px;margin-top:10px;">
+                                        <a class="abtn">搜索</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(function () {
+                    var xiala = $(".btn_search_down");
+                    var tanchu = $(".search_down_box");
+                    var xialaicon = xiala.find(".list_down_icon");
+                    var sousuo = $(".text-right");
+                    xiala.click(function () {
+                        if (xiala.data('istanchu') == 'true') {
+                            xiala.data('istanchu', 'false');
+                            xialaicon.removeClass("tran_icon");
+                            tanchu.hide();
+                        } else {
+                            xiala.data('istanchu', 'true');
+                            xialaicon.addClass("tran_icon");
+                            tanchu.show();
+                        }
+                    });
+                    sousuo.click(function () {
+                        xiala.data('istanchu', 'false');
+                        xialaicon.removeClass("tran_icon");
+                        tanchu.hide();
+                    });
+                });
+            </script>
+        </div>
+        <div class="plan ">
+            <div class="body zuzhi_list ">
+                <div class="data">
+                    <div class="selectShowItem">
+                        <p><label for="col">显示列</label><span><input type="checkbox" class="selectAllItem">全选</span></p>
+                        <input type="checkbox" name="item" class="item" checked><span>序号</span>
+                        <input type="checkbox" name="item" class="item" checked><span>组织名称</span>
+                        <input type="checkbox" name="item" class="item" checked><span>组织简称</span>
+                        <input type="checkbox" name="item" class="item" checked><span>上级组织</span>
+                        <input type="checkbox" name="item" class="item"><span>组织代码</span>
+                        <input type="checkbox" name="item" class="item"><span>组织层级</span>
+                        <input type="checkbox" name="item" class="item" checked><span>部门负责人</span>
+                        <input type="checkbox" name="item" class="item"><span>部门岗位数</span>
+                        <input type="checkbox" name="item" class="item"><span>部门编制</span>
+                        <input type="checkbox" name="item" class="item"><span>启用日期</span>
+                    </div>
+                    <div class="more">
+                        <div class="more_bg">
+                            显示更多<img src="img/common/arrow_down.png" height="16" width="16" alt="">
+                        </div>
+                    </div>
+                    <div class="table-responsive" style="width:100%;overflow:auto;">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="check_th"><input type="checkbox" id="selectAll"></th>
+                                    <th class="toggle">序号</th>
+                                    <th class="toggle">组织名称</th>
+                                    <th class="toggle">组织简称</th>
+                                    <th class="toggle">上级组织</th>
+                                    <th class="toggle hide">组织代码</th>
+                                    <th class="toggle hide">组织层级</th>
+                                    <th class="toggle ">部门负责人</th>
+                                    <th class="toggle hide">部门岗位数</th>
+                                    <th class="toggle hide">部门编制</th>
+                                    <th class="toggle hide">启用日期</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="check_th"><input class="id" type="checkbox" name="id" value="1"></th>
+                                    <td class="taskname toggle ">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                    <td class="toggle ">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                    <td class="toggle hide">责任人</td>
+                                    <td class="toggle hide">责任人</td>
+                                    <td class="toggle ">责任人</td>
+                                    <td class="toggle hide">责任人</td>
+                                    <td class="toggle hide ">责任人</td>
+                                    <td class="toggle hide">责任人</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="footer_page">
+                    <table class="page_content">
+                        <tr>
+                            <td>共2条记录</td>
+                            <td>
+                                <label>每页条数</label>
+                                <div class="page_num tz_page" style="display:inline-block;">
+                                    <input type="text" value="20" class="ui-pg-selbox-valuetext">
+                                    <i class="down fa fa-angle-down"></i>
+                                    <ul class="dropdown-menu ui_pg" role="menu">
+                                        <li role="option" value="100">100</li>
+                                        <li role="option" value="50">50</li>
+                                        <li role="option" value="40">40</li>
+                                        <li role="option" value="30">30</li>
+                                        <li role="option" value="20">20</li>
+                                        <li role="option" value="10" class="selected">10</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" value="" class="ui-pg-selbox-valuetext">
+                                    <a href="#">跳转</a>
+                                </div>
+                            </td>
+                            <td class="page_up"><span><</span></td>
+                            <td class="fy_page">
+                                <div>
+                                    <span>0</span>
+                                    /
+                                    <span>0</span>
+                                </div>
+                            </td>
+                            <td class="page_next"><span>></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        组织维护
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="tc_content">
+                        <p>
+                            <span><i class="muststar">*</i>组织名称</span>
+                            <input class="start form-control" name="start" type="text" placeholder="组织名称" required>
+                        </p>
+                        <p>
+                            <span>组织简称</span>
+                            <input class="start form-control" name="start" type="text" placeholder="组织简称" required>
+                        </p>
+                        <p>
+                            <span>组织代码</span>
+                            <input class="start form-control" name="start" type="text" placeholder="组织代码" required>
+                        </p>
+                        <div class="tc_drop">
+                            <span class="tc_drop_title"><i class="muststar">*</i>上级组织</span>
+                            <div class="divdrop">
+                                <button type="button" class="btndrop pos_r" style="width:200px;">
+                                    <span class="dropText">选择组织</span> <span class="fa fa-angle-down list_down_icon dropicon  down_icon_right"></span>
+                                </button>
+                                <ul class="dropmenu" style="display:none;">
+                                    <li class="liitem">上级组织名称1</li>
+                                    <li class="liitem">上级组织名称2</li>
+                                    <li class="liitem">上级组织名称3</li>
+                                    <li class="liitem">上级组织名称4</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>
+                            <span>组织序号</span>
+                            <input class="start form-control" name="start" type="text" placeholder="组织序号" required>
+                        </p>
+                        <p>
+                            <span>启用日期</span>
+                            <input class="Wdate start   form-control" type="text" onclick="WdatePicker()">
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn add btn  btn-default">
+                        保存并继续添加
+                    </button>
+                    <button type="button" class="btn btn-info ">
+                        保存
+                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        取消
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade rysz_modal" id="drModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width:600px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        薪酬导入
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="xcdr_content pos_r" style="padding:20px;">
+                        <div class="width_bor"></div>
+                        <div class="site_one">
+                            <div class="xcdr_nav">1</div>
+                            <div class="list_title"><strong>下载模板  </strong><span>请点击按钮下载模板文件，并按照文件格式要求填充数据。</span></div>
+                            <div class="webbox">
+                                <span class="xc_label">请选择模板格式：</span>
+                                <div class="input-group">
+                                    <input type="text" class="form-control">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn hr-dropdown dropdown-toggle" data-toggle="dropdown">
+                                            <span class="fa fa-angle-down list_down_icon dropicon  "></span>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><span>功能</span></li>
+                                            <li><span>功能</span></li>
+                                            <li><span>功能</span></li>
+                                        </ul>
+                                    </div><!-- /btn-group -->
+                                </div>
+                                <div class="glyphicon glyphicon-info-sign">
+                                    <div class="base_import_infomation_show2">此模板用于快速初始化系统所必须的组织、职位、员工信息，导入成功后需要进一步对组织的上下级关系进行维护。不允许覆盖导入，不允许借助模板来删除已有记录。</div>
+                                </div>
+                            </div>
+                            <div class="xc_mar">
+                                <span class="xc_label">是否导出已有数据：</span>
+                                <input type="checkbox" name="my-checkbox" data-on-text="是" data-off-text="否" />
+                            </div>
+                            <div class="xc_mar">
+                                <a class="btn jx_btn">下载模板</a>
+                            </div>
+                        </div>
+                        <div class="site_one">
+                            <div class="xcdr_nav">2</div>
+                            <div class="list_title"><strong>上传文件  </strong><span>请点击按钮上传填充了要导入数据的模板格式文件。</span></div>
+                            <div class="webbox">
+                                <div class="file-box">
+                                    <input type="text" name="textfield" id="textfield" class="txt_update form-control" />
+                                    <input type="button" class="btn jx_btn btn-blue" value="选择文件" />
+                                    <!--上传时只显示excel文件-->
+                                    <input type="file" name="fileField" class="file" id="fileField" size="28" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" onchange="document.getElementById('textfield').value=this.value" />
+                                </div>
+                            </div>
+                            <div class="xc_mar">
+                                <span style="color:#999;">是否依据导入模板删除系统中已有的数据： </span>
+                                <input type="checkbox" name="my-checkbox" data-on-text="是" data-off-text="否" />
+                            </div>
+                            <div class="xc_mar">
+                                <span class="">是否覆盖： </span>
+                                <input type="checkbox" name="my-checkbox" data-on-text="是" data-off-text="否" />
+                            </div>
+                            <div class="xc_mar">
+                                <input type="submit" name="submit" class="btn jx_btn" value="开始上传" />
+                            </div>
+                        </div>
+                        <div class="site_one">
+                            <div class="xcdr_nav">3</div>
+                            <div class="list_title"><strong>检验数据  </strong><span>系统将检验导入文件中相关的逻辑是否合理</span></div>
+                        </div>
+                        <div class="site_one" style="padding-bottom:0;margin-bottom:0;">
+                            <div class="xcdr_nav">4</div>
+                            <div class="list_title"><strong>完成操作  </strong></div>
+                        </div>
+                        <script>
+                            //switch按钮
+                            $("[name='my-checkbox']").bootstrapSwitch();
+                        </script>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                        确定
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        取消
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="delModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        提示
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    确定要删除吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                        确定
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        取消
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.min.js"></script>
+    <!--下拉框-->
+    <script>
+        $(function () {
+            var divdrop = $(".divdrop");
+            for (var i = 0; i < divdrop.size() ; i++) {
+                InitDrop($(divdrop[i]));
+            }
+        });
+        function InitDrop(obj) {
+            var itemGroup = $(obj);
+            var btndrop = itemGroup.find(".btndrop").eq(0);
+            var dropdownmenu = itemGroup.find(".dropmenu").eq(0);
+            var menuli = dropdownmenu.find(".liitem");
+            var dropText = itemGroup.find(".dropText").eq(0);
+            var dropicon = itemGroup.find(".dropicon").eq(0);
+            btndrop.click(function () {
+                var cur = $(this);
+                if (cur.data('active') !== 'on') {
+                    cur.data('active', 'on');
+                    dropdownmenu.show();
+                    dropicon.addClass("active");
+                    //$($trii[index]).addClass("tran_icon");
+                } else {
+                    cur.data('active', 'off');
+                    dropdownmenu.hide();
+                    dropicon.removeClass("active");
+                    divadditem.hide();
+                }
+            });
+            menuli.click(function () {
+                var itemli = $(this);
+                dropText.html(itemli.html());
+                btndrop.data('active', 'off');
+                dropdownmenu.hide();
+                dropicon.removeClass("active");
+                modal_dz.val("");
+                divadditem.hide();
+            });
+            var additem = dropdownmenu.find(".additem").eq(0);
+            var divadditem = itemGroup.find(".divadditem").eq(0);
+            additem.click(function () {
+                divadditem.show();
+            });
+            var modal_dz = divadditem.find(".modal_dz").eq(0);
+            var btnqueding = divadditem.find(".btnqueding").eq(0);
+            var btncancel = divadditem.find(".btncancel").eq(0);
+            btncancel.click(function () {
+                divadditem.hide();
+                itemGroup.show();
+                modal_dz.val("");
+                btndrop.data('active', 'off');
+                dropdownmenu.hide();
+                dropicon.removeClass("active");
+            });
+            btnqueding.click(function () {
+                dropText.html(modal_dz.val());
+                divadditem.hide();
+                itemGroup.show();
+                modal_dz.val("");
+                btndrop.data('active', 'off');
+                dropdownmenu.hide();
+                dropicon.removeClass("active");
+            });
+        }
+        //$(document).click(function (e) {
+        //    // && !$.contains($menu[0], e.target)
+        //    //alert($.inArray(e.target, $tri));
+        //    if ($.inArray(e.target, $tri) == -1) {
+        //        $drop.hide();
+        //        $tri.data('active', 'off');
+        //        $trii.removeClass("tran_icon");
+        //    }
+        //});
+    </script>
+</body>
+</html>

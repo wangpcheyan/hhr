@@ -1,0 +1,5 @@
+// @koala-prepend "login.js"
+// @koala-prepend "register.js"
+// @koala-prepend "topbar.js"
+// @koala-prepend "plan.js"
+// @koala-prepend "performance.js"

@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>积分分析</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="kinwai">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.pc.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="jifen_body">
+        <div class="am-sticky-placeholder" style="height: 42px; margin: 0px;">
+            <ul class="am-nav am-nav-tabs dy-show2 " style="margin: 0px;padding:0;">
+                <li class="top_title"><a href="integral.html">积分</a>><a href="integral.html" style="margin:0;">我的积分</a>><span style="color:#999;padding:0 5px;">积分分析</span></li>
+            </ul>
+        </div>
+        <div class="jifen_content">
+            <div class="plan">
+                <div class="sidebar">
+                    <div class="yearSelect">
+                        <select name="year" id="year" class="select"></select>
+                    </div>
+                    <ul class="subnav">
+                        <li><a href="#">年/季</a></li>
+                        <li><a href="#">1月</a></li>
+                        <li><a href="#">2月</a></li>
+                        <li><a href="#">3月</a></li>
+                        <li><a href="#">4月</a></li>
+                        <li><a href="#">5月</a></li>
+                        <li><a href="#">6月</a></li>
+                        <li><a href="#">7月</a></li>
+                        <li><a href="#">8月</a></li>
+                        <li><a href="#">9月</a></li>
+                        <li><a href="#">10月</a></li>
+                        <li><a href="#">11月</a></li>
+                        <li><a href="#">12月</a></li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="year-quarter">
+                        <h3><a href="#">年度</a></h3>
+                        <span><a href="#">第一季度</a></span>
+                        <span><a href="#">第二季度</a></span>
+                        <span><a href="#">第三季度</a></span>
+                        <span><a href="#">第四季度</a></span>
+                    </div>
+                    <div class="month-week">
+                        <h3><a href="#">月度</a></h3>
+                        <span><a href="#">第一周</a></span>
+                        <span><a href="#">第二周</a></span>
+                        <span><a href="#">第三周</a></span>
+                        <span><a href="#">第四周</a></span>
+                    </div>
+                    <div class="fenxibiao ">
+                        <div id="main" style=" display:inline-block;width: 45%;height:400px;"></div>
+                        <div class="fenxi_bottom" style=" display:inline-block;">
+                            <div class="fenxi_text">
+                                最近七天，你和小火伴们平均积分如下：<br />大伙平均30分，<br />你平均70分！
+                            </div>
+                            <div class="fenxi_bar">
+                                <span class="left_low">积分过低</span>积分低于平均水平<span class="right_height">高于平均水平</span>
+                                <span class="fenxi_num">30</span>
+                                <span class="fenxi_num2">70</span>
+                                <span class="glyphicon glyphicon-map-marker"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/echarts.common.min.js"></script>
+        <script src="js/12jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/app.min.js"></script>
+        <script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('main'));
+
+            // 指定图表的配置项和数据
+            //app.title = '折柱混合';
+
+            option = {
+                tooltip: {
+                    trigger: 'axis'
+                },
+                toolbox: {
+                    feature: {
+                        splitLine: true,
+                        //dataView: { show: true, readOnly: false },
+                        //magicType: { show: true, type: ['line', 'bar'] },
+                        //restore: { show: true },
+                        //saveAsImage: { show: true }
+                    }
+                },
+                legend: {
+                    data: ['我', '本组平均', '公司平均']
+                },
+                xAxis: [
+                    {
+                        splitLine: {
+                            show: true,
+                        },
+                        type: 'category',
+                        data: ['基础分', '工作分', '奖励分', '福利分', '其他']
+                    }
+                ],
+                yAxis: [
+                    {
+                        splitLine: {
+                            show: true,
+                        },
+                        type: 'value',
+                        name: '平均分',
+                        min: 0,
+                        max: 100,
+                        interval: 20,
+                        barCategoryGap: '50',
+
+                        axisLabel: {
+                            formatter: '{value}'
+                        }
+                    },
+                ],
+                series: [
+                    {
+                        name: '我',
+                        type: 'line',
+                        itemStyle: {
+                            normal: { color: '#ff6600' }
+                        },
+                        data: [2.0, 2.2, 3.3, 4.5, 20.3]
+                    },
+
+                    {
+                        name: '本组平均',
+                        type: 'bar',
+                        itemStyle: {
+                            normal: { color: '#87cefc' }
+                        },
+                        data: [2.0, 4.9, 7.0, 28.2, 25.6]
+                    },
+                    {
+                        name: '公司平均',
+                        type: 'bar',
+                        barCategoryGap: '50',
+                        itemStyle: {
+                            normal: { color: '#db70d6' }
+                        },
+                        data: [2.6, 5.9, 9.0, 80.4, 28.7]
+                    },
+
+                ]
+            };
+
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        </script>
+    </div>
+</body>
+</html>

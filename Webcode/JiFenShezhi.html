@@ -1,0 +1,358 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>积分设置</title>
+    <meta name="author" content="kinwai">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/style.pc.css" rel="stylesheet" />
+    <script src="js/12jquery.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="http://cdn.bootcss.com/selectivizr/1.0.2/selectivizr.js"></script>
+    <![endif]-->
+    <!-- Favicons -->
+    <!--html5shiv.min.js认识html5新标签 -->
+</head>
+<body>
+    <div class="jifen_body">
+        <div class="am-sticky-placeholder" style="height: 42px; margin: 0px;">
+            <ul class="am-nav am-nav-tabs dy-show2 " style="margin: 0px;padding:0;">
+                <li class="top_title">
+                    <a href="integral.html">积分</a>
+                    >
+                    <span style="color:#999;padding:0 5px;">积分设置</span>
+                </li>
+            </ul>
+        </div>
+        <div class="zuzhi_btn">
+            <a class="btn new_btn" data-toggle="modal" data-target="#myModal">新建</a>
+            <div class="btn-group">
+                <button type="button" class="btn hr-dropdown dropdown-toggle" data-toggle="dropdown">
+                    更多 <span class="fa fa-angle-down list_down_icon"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a class="aUpdate" data-toggle="modal" data-target="#myModal" href="#">修改</a></li>
+                    <li><a class="aDel" data-toggle="modal" data-target="#delModal" href="#">删除</a></li>
+                    <li><a href="#">导入</a></li>
+                    <li><a href="#">导出</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="zuzhi_btn">
+            <div class="divdrop" style="margin-right:10px;">
+                <button type="button" class="btndrop text-left pos_r" style="width:100px;">
+                    <span id="span" class="dropText ">基础分</span> <span class="fa fa-angle-down list_down_icon dropicon down_icon_right"></span>
+                </button>
+                <ul class="dropmenu click_x_y pa-left" style="display:none;">
+                    <li class="liitem li_xy">基础分</li>
+                    <li class="liitem li_xy">工作分</li>
+                    <li class="liitem li_xy">奖励分</li>
+                    <li class="liitem li_xy">福利分</li>
+                    <li class="liitem li_xy">价值总分</li>
+                </ul>
+            </div>
+            <div class="btn_content btn-group">
+                <div class="divdrop">
+                    <button type="button" class="btndrop text-left pos_r" style="width:100px;">
+                        <span class="dropText">工龄积分</span> <span class="fa fa-angle-down list_down_icon dropicon down_icon_right"></span>
+                    </button>
+                    <ul class="dropmenu pa-left" style="display:none;">
+                        <li class="liitem">工龄积分</li>
+                        <li class="liitem">技能积分</li>
+                        <li class="liitem">学历积分</li>
+                        <li class="liitem">职称积分</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="gwBtn" class="btn-group hidden">
+                <div class="divdrop">
+                    <button type="button" class="btndrop text-left pos_r" style="width:100px;">
+                        <span class="dropText">岗位</span> <span class="fa fa-angle-down list_down_icon dropicon down_icon_right"></span>
+                    </button>
+                    <ul class="dropmenu pa-left" style="display:none;">
+                        <li class="liitem">岗位</li>
+                        <li class="liitem">岗位</li>
+                        <li class="liitem">岗位</li>
+                        <li class="liitem">岗位</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="plan " style="margin-top:20px;">
+            <div class="body zuzhi_list sh_list1">
+                <div class="data">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="check_th"><input type="checkbox" id="selectAll"></th>
+                                    <th class="toggle">积分类别</th>
+                                    <th class="toggle">积分项目</th>
+                                    <th class="toggle">积分标准</th>
+                                    <th class="toggle">审核人</th>
+                                    <th class="toggle">审批人</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="check_th"><input class="id" type="checkbox" name="id" value="1"></th>
+                                    <td class="taskname toggle ">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                    <td class="toggle ">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                </tr>
+                                <tr>
+                                    <th class="check_th"><input class="id" type="checkbox" name="id" value="1"></th>
+                                    <td class="taskname toggle ">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                    <td class="toggle ">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="footer_page">
+                    <table class="page_content">
+                        <tr>
+                            <td>共2条记录</td>
+                            <td>
+                                <label>每页条数</label>
+                                <div class="page_num tz_page" style="display:inline-block;">
+                                    <input type="text" value="20" class="ui-pg-selbox-valuetext">
+                                    <i class="down fa fa-angle-down"></i>
+                                    <ul class="dropdown-menu ui_pg" role="menu">
+                                        <li role="option" value="100">100</li>
+                                        <li role="option" value="50">50</li>
+                                        <li role="option" value="40">40</li>
+                                        <li role="option" value="30">30</li>
+                                        <li role="option" value="20">20</li>
+                                        <li role="option" value="10" class="selected">10</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" value="" class="ui-pg-selbox-valuetext">
+                                    <a href="#">跳转</a>
+                                </div>
+                            </td>
+                            <td class="page_up"><span><</span></td>
+                            <td class="fy_page">
+                                <div>
+                                    <span>0</span>
+                                    /
+                                    <span>0</span>
+                                </div>
+                            </td>
+                            <td class="page_next"><span>></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        新建/修改
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="tc_content ">
+                        <div class="tc_drop">
+                            <span class="tc_drop_title">
+                                积分种类
+                            </span>
+                            <div class="divdrop">
+                                <button type="button" class="btndrop pos_r" style="width:200px;">
+                                    <span class="dropText"> </span> <span class="fa fa-angle-down list_down_icon dropicon  down_icon_right"></span>
+                                </button>
+                                <ul class="dropmenu" style="display:none;">
+                                    <li class="liitem">基础分</li>
+                                    <li class="liitem">工作分</li>
+                                    <li class="liitem">福利分</li>
+                                    <li class="liitem">奖励分</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>
+                            <span class="tc_drop_title">项目名称</span>
+                            <input class="xmname form-control" name="start " type="text" placeholder="请输入积分项目名称" required>
+                        </p>
+                        <p>
+                            <span class="tc_drop_title">积分标准</span>
+                            <input class="jfnum form-control" name="start" type="text" placeholder="" required>
+                            /
+                            <input class="jfnum form-control" name="start" type="text" placeholder="" required>
+                        </p>
+                        <div class="tc_drop">
+                            <span class="tc_drop_title">审核人</span>
+                            <div class="divdrop">
+                                <button type="button" class="btndrop pos_r" style="width:200px;">
+                                    <span class="dropText">审核人</span> <span class="fa fa-angle-down list_down_icon dropicon  down_icon_right"></span>
+                                </button>
+                                <ul class="dropmenu" style="display:none;">
+                                    <li class="liitem">审核人</li>
+                                    <li class="liitem">审核人</li>
+                                    <li class="liitem">审核人</li>
+                                    <li class="liitem">审核人</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tc_drop">
+                            <span class="tc_drop_title">审批人</span>
+                            <div class="divdrop">
+                                <button type="button" class="btndrop pos_r" style="width:200px;">
+                                    <span class="dropText">审批人</span> <span class="fa fa-angle-down list_down_icon dropicon  down_icon_right"></span>
+                                </button>
+                                <ul class="dropmenu" style="display:none;">
+                                    <li class="liitem">审批人</li>
+                                    <li class="liitem">审批人</li>
+                                    <li class="liitem">审批人</li>
+                                    <li class="liitem">奖励分</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn add  btn-default">
+                        保存并继续添加
+                    </button>
+                    <button type="button" class="btn btn-info">
+                        保存
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        取消
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade layer_title" id="delModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title  " id="myModalLabel">
+                        提示
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    确认要删除选中的数据吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                        确认
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        取消
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.min.js"></script>
+    <!--下拉框-->
+    <script>
+        $(function () {
+            var divdrop = $(".divdrop");
+            for (var i = 0; i < divdrop.size() ; i++) {
+                InitDrop($(divdrop[i]));
+            }
+        });
+        function InitDrop(obj) {
+            var itemGroup = $(obj);
+            var btndrop = itemGroup.find(".btndrop").eq(0);
+            var dropdownmenu = itemGroup.find(".dropmenu").eq(0);
+            var menuli = dropdownmenu.find(".liitem");
+            var dropText = itemGroup.find(".dropText").eq(0);
+            var dropicon = itemGroup.find(".dropicon").eq(0);
+            btndrop.click(function () {
+                var cur = $(this);
+                if (cur.data('active') !== 'on') {
+                    cur.data('active', 'on');
+                    dropdownmenu.show();
+                    dropicon.addClass("tran_icon");
+                    //$($trii[index]).addClass("tran_icon");
+                } else {
+                    cur.data('active', 'off');
+                    dropdownmenu.hide();
+                    dropicon.removeClass("tran_icon");
+                    divadditem.hide();
+                }
+            });
+            menuli.click(function () {
+                var itemli = $(this);
+                dropText.html(itemli.html());
+                btndrop.data('active', 'off');
+                dropdownmenu.hide();
+                dropicon.removeClass("tran_icon");
+                modal_dz.val("");
+                divadditem.hide();
+            });
+            var additem = dropdownmenu.find(".additem").eq(0);
+            var divadditem = itemGroup.find(".divadditem").eq(0);
+            additem.click(function () {
+                divadditem.show();
+            });
+            var modal_dz = divadditem.find(".modal_dz").eq(0);
+            var btnqueding = divadditem.find(".btnqueding").eq(0);
+            var btncancel = divadditem.find(".btncancel").eq(0);
+            btncancel.click(function () {
+                divadditem.hide();
+                itemGroup.show();
+                modal_dz.val("");
+                btndrop.data('active', 'off');
+                dropdownmenu.hide();
+                dropicon.removeClass("tran_icon");
+            });
+            btnqueding.click(function () {
+                dropText.html(modal_dz.val());
+                divadditem.hide();
+                itemGroup.show();
+                modal_dz.val("");
+                btndrop.data('active', 'off');
+                dropdownmenu.hide();
+                dropicon.removeClass("tran_icon");
+            });
+        }
+        //$(document).click(function (e) {
+        //    // && !$.contains($menu[0], e.target)
+        //    //alert($.inArray(e.target, $tri));
+        //    if ($.inArray(e.target, $tri) == -1) {
+        //        $drop.hide();
+        //        $tri.data('active', 'off');
+        //        $trii.removeClass("tran_icon");
+        //    }
+        //});
+    </script>
+</body>
+</html>

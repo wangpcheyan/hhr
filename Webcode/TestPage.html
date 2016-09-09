@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="plugs/daterangepicker/moment.min.js"></script>
+    <script src="plugs/daterangepicker/daterangepicker.js"></script>
+    <link href="plugs/daterangepicker/daterangepicker.css" rel="stylesheet" />
+</head>
+<body>
+    <input id="Text1" style="width:300px;"  type="text" />
+    <script>
+        $(function () {
+            $('#Text1').daterangepicker({
+                "showDropdowns": true,
+                "startDate": "2016/09/01",
+                "endDate": "2016/09/08",
+                locale: {
+                    "format": "YYYY/MM/DD",
+                    applyLabel: '确定',
+                    cancelLabel: '取消',
+                    fromLabel: '起始时间',
+                    toLabel: '结束时间',
+                    customRangeLabel: '自定义',
+                    daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+                    monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+                            '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                    firstDay: 1
+                }
+            }, function (start, end, label) {
+                console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+            });
+        });
+    </script>
+</body>
+</html>

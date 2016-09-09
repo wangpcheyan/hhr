@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>我的考核</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="kinwai">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/common.js"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="plugs/daterangepicker/daterangepicker.css" rel="stylesheet" />
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="plugs/daterangepicker/moment.js"></script>
+    <script src="plugs/daterangepicker/daterangepicker.js"></script>
+
+    <!--<link href="css/Common.css" rel="stylesheet" />
+    <link href="css/kaohe.css" rel="stylesheet" />-->
+</head>
+<body>
+    <div id="bs_layout_container">
+        <div class="empty-layout">
+            <div id="main-region">
+                <div class="okr-layout-home">
+                    <div class="header-container">
+                        <div class="okr-home-header">
+                            <div class="clearfix">
+                                <div class="okr-header-tittle-icon"></div>
+                                <div class="okr-header-tittle">
+                                    <h1>我的考核</h1>
+                                    <div class="dropdown-list-container">
+                                        <div class="dropdown-btn">切换视图<span class="twm-caret"></span></div>
+                                        <ul class="dropdown-list">
+                                            <li class="item active">
+                                                <a>我的考核</a>
+                                            </li>
+                                            <li class="item ">
+                                                <a>我发布的</a>
+                                            </li>
+                                            <li class="item ">
+                                                <a>我评价的</a>
+                                            </li>
+                                            <li class="item ">
+                                                <a>我的团队</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="button-box">
+                                    <button type="button" class="twm-button twm-button-primary twm-button-lg create-okr btn-customize2">创建考核</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-wrap" data-name="filter-wrap">
+                        <div>
+                            <div data-name="filter-region">
+                                <div class="okr-search-filter">
+                                    <div class="filter-left-wrap">
+                                        <div class="filter-tab">
+                                            <div class="okr-filtter-tab">
+                                                <ul data-name="menu-wrap">
+                                                    <li class="okr-filter-tab-item">
+                                                        <div class="filter-tab-item-wrap">
+                                                            <span class="name" data-name="item-name">考核周期</span><span class="icon tu-icon-sort-down"></span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="okr-filter-tab-item">
+                                                        <div class="filter-tab-item-wrap">
+                                                            <span class="name" data-name="item-name">状态</span><span class="icon tu-icon-sort-down"></span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="okr-filter-tab-item">
+                                                        <div class="filter-tab-item-wrap" data-name="tab-item" data-tab-type="Department">
+                                                            <span class="name" data-name="item-name">部门</span><span class="icon tu-icon-sort-down"></span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="okr-filter-tab-item">
+                                                        <div class="filter-tab-item-wrap" data-name="tab-item" data-tab-type="Userselect">
+                                                            <span class="name" data-name="item-name">人员</span><span class="icon tu-icon-sort-down"></span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div data-name="result-wrap"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filter-right-wrap">
+                                        <div class="filter-seach">
+                                            <div class="okr-search">
+                                                <div class="tu-input-default">
+                                                    <div class="tu-clearfix">
+                                                        <div class="input-wrap">
+                                                            <div class="input-inner">
+                                                                <label class="placeholder" for="search" data-name="placeholder">请输入考核名称</label>
+                                                                <input type="text" id="search" value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="btn-wrap">
+                                                            <span class="tu-icon-close search-btn cancel-btn" style="display:none;"></span>
+                                                            <span class="tu-icon-search search-btn conf-btn"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filter-orther-btn">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-name="activity-list-container" class="layout-container">
+                        <div class="activity-list-cont">
+                            <div class="twm-table twm-table-hover">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="table-okr-username">人员</th>
+                                            <th class="table-okr-name">考核名称</th>
+                                            <th>部门</th>
+                                            <th>当前阶段</th>
+                                            <th>
+                                                <span class="table-sort-th">
+                                                    总分
+                                                    <!--在最近查看中取消排序-->
+                                                    <span class="table-sort table-sort-up tu-icon-sort-up sort-up-notice"></span>
+                                                    <span class="table-sort table-sort-down tu-icon-sort-down sort-down-notice"></span>
+                                                </span>
+                                            </th>
+                                            <th class="table-sort-th">
+                                                <span class="table-sort-th">
+                                                    发布时间
+                                                </span>
+                                            </th>
+                                            <th>创建人</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="table-okr-username" title="张三">
+                                                <a href="" target="_blank">
+                                                    <span class="radius_img30  " style="background-color:#8dc8ea;">张</span>
+                                                </a>
+                                                张三
+                                            </td>
+                                            <td class="table-okr-name">
+                                                <a href="" target="_blank">8月 - 2016年月度考核</a>
+                                            </td>
+                                            <td>
+                                                --
+                                            </td>
+                                            <td>
+                                                创建考核
+                                            </td>
+                                            <td>
+                                                --
+                                            </td>
+                                            <td>
+                                                2016/08/31
+                                            </td>
+                                            <td>
+                                                苏二
+                                            </td>
+                                            <td class="operation">
+                                                <div class="wrap">
+                                                    <div class="remind-left">
+                                                        <span class="tu-icon-remindta icon-remind"></span>
+                                                        <span class="remiding">提醒ta</span>
+                                                    </div>
+                                                    <span class="tu-icon-more icon-more">
+                                                        <div class="display-more">
+                                                            <p class="delete-person"><span class="tu-icon-delete"></span><span class="delete">删除</span></p>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-offset-2 demo">
+                        <h4>Your Date Range Picker</h4>
+                        <input type="text" id="config-demo" class="form-control">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                    </div>
+                    <script>
+                        $('.demo').daterangepicker({
+                            "showDropdowns": true,
+                            "showWeekNumbers": true,
+                            "timePickerIncrement": 30,
+                            "linkedCalendars": false,
+                            "autoUpdateInput": false,
+                            "showCustomRangeLabel": false,
+                            "startDate": "08/26/2016",
+                            "endDate": "09/01/2016"
+                        }, function (start, end, label) {
+                            console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+                        });
+                    </script>
+                    <!--分页-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tu-infotip infotip-remind infotip-fade infotip-top infotip-in" style="top: 230px; left: 967.5px; display: block;">
+        <div class="infotip-arrow">
+            <div class="infotip-arrow infotip-cover">
+            </div>
+        </div>
+        <div class="infotip-inner">
+            <span class="tu-icon-check">
+            </span>提醒成功!
+        </div>
+    </div>
+</body>
+</html>

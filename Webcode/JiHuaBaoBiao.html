@@ -1,0 +1,394 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>计划报表</title>
+    <meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <meta name="author" content="kinwai">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <script src="js/12jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/Common.css" rel="stylesheet" />
+    <link href="css/kaohe.css" rel="stylesheet" />
+
+    <script src="js/quanju.js"></script>
+
+    <script src="js/echarts.common.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="plugs/daterangepicker/moment.min.js"></script>
+    <script src="plugs/daterangepicker/daterangepicker.js"></script>
+    <link href="plugs/daterangepicker/daterangepicker.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <div id="bs_layout_container">
+        <div class="empty-layout">
+            <div id="main-region">
+                <div class="okr-layout-home">
+                    <div class="header-container">
+                        <div class="okr-home-header">
+                            <div class="clearfix">
+                                <div class="okr-header-tittle-icon"></div>
+                                <div class="okr-header-tittle">
+                                    <h1 style="line-height:50px;">计划报表</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-wrap" data-name="filter-wrap">
+                        <div>
+                            <div data-name="filter-region">
+                                <div class="okr-search-filter">
+                                    <div class="filter-left-wrap">
+                                        <div class="filter-tab">
+                                            <div class="okr-filtter-tab">
+                                                <ul data-name="menu-wrap">
+                                                    <li class="okr-filter-tab-item">
+                                                        <div class="filter-tab-item-wrap dropdown-toggle" data-toggle="dropdown">
+                                                            <span class="name" data-name="item-name">我的计划</span><span class="icon tu-icon-sort-down"></span>
+                                                        </div>
+                                                        <!--我的计划 点击弹出框-->
+                                                        <div class="smember_container dropdown-menu" role="menu" style="top: 34px; left: 0;">
+                                                            <div class="smember_simple_container">
+                                                                <div class="smember_condition">
+                                                                    <div class="smember_condition_all">
+                                                                        <div class="smember_header_input">
+                                                                            <input autocomplete="off" id="_user_selector" class="smember_condition_input" placeholder="输入同事姓名或邮箱" type="text" name="content">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="smember_search_content">
+                                                                    <div class="smember_search_content_left">
+                                                                        <div class="smember_list_container">
+                                                                            <div>
+                                                                                <!--无同事时显示-->
+                                                                                <div class="smember_list_empty" style="display:none;">暂无同事</div>
+                                                                                <ul class="smember_list_parent" style="height: 268px;">
+                                                                                    <li class="clearfix">
+                                                                                        <div class="smember_list_item" list-type="item">
+                                                                                            <span class="radius_img30 " style="background-color:#8dc8ea;" original-title="张三">张</span>
+                                                                                            <div class="smember_list_info">
+                                                                                                <div class="member_list_item_one">
+                                                                                                    <div class="smember_list_item_name" title="张三">张三</div>
+                                                                                                </div>
+                                                                                                <div class="smember_list_item_email" title="2710131314@qq.com">2710131314@qq.com</div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <ul class="list_container clearfloat"></ul>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="smember_search_content_left_footer"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="smember_footer">
+                                                                    <div class="smember_footer_group">
+                                                                        <a class="smember_btn_default">关闭</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="okr-filter-tab-item">
+                                                        <div class="filter-tab-item-wrap  dropdown-toggle" data-toggle="dropdown">
+                                                            <span class="name" data-name="item-name">报表类型</span><span class="icon tu-icon-sort-down"></span>
+                                                        </div>
+                                                        <!--报表类型 点击弹出-->
+                                                        <ul id="ulbaobiaoleixing" class="okr-dropdownlist dropdown-menu" role="menu" style="width: 170px; top: 34px; left: 0; ">
+                                                            <li class="list-item " data-tittle="已完成">
+                                                                计划完成率
+                                                            </li>
+                                                            <li class="list-item " data-tittle="进行中">
+                                                                计划结果
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="okr-filter-tab-item">
+                                                        <div id="divkaohezhouqi" class="filter-tab-item-wrap dropdown-toggle" data-toggle="dropdown">
+                                                            <span class="name" data-name="item-name">考核周期</span><span class="icon tu-icon-sort-down"></span>
+                                                        </div>
+                                                        <div id="divdatekuang" class="tt-time-date-picker" role="menu" style="top: 34px; left: 0px;display:none;">
+                                                            <div class="cont-box" data-name="date-time-picker-content">
+                                                                <div class="date-container">
+                                                                    <div id="divdaterongqi" class="date-time-picker-date">
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <input id="Text1" style="width:200px;" type="text" />
+                                                        <script>
+                                                            $(function () {
+                                                                var mydate = new Date();
+                                                                var divkaohezhouqi = $('#divkaohezhouqi');
+                                                                var datapicker = divkaohezhouqi.daterangepicker({
+                                                                    "showDropdowns": true,
+                                                                    "parentEl": "#divdaterongqi",
+                                                                    "linkedCalendars": false,
+                                                                    "applyClass": "btn-sure",
+                                                                    "cancelClass": "btn-cancel",
+                                                                    locale: {
+                                                                        format: "YYYY/MM/DD",
+                                                                        applyLabel: '确定',
+                                                                        cancelLabel: '取消',
+                                                                        fromLabel: '起始时间',
+                                                                        toLabel: '结束时间',
+                                                                        customRangeLabel: '自定义',
+                                                                        daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+                                                                        monthNames: ['1月', '2月', '3月', '4月', '5月', '6月',
+                                                                                '7月', '8月', '9月', '10月', '11月', '12月'],
+                                                                        firstDay: 1
+                                                                    }
+                                                                }, function (start, end, label) {
+                                                                    var dateranges = start.format('YYYY/MM/DD') + "-" + end.format('YYYY/MM/DD');
+                                                                    $('#divkaohezhouqi').data("dateranges", dateranges);
+                                                                });
+                                                                datapicker.on('show.daterangepicker', function (ev, picker) {
+                                                                    $(".daterangepicker").addClass("open");
+                                                                    $("#divdatekuang").show();
+                                                                });
+                                                                datapicker.on('hide.daterangepicker', function (ev, picker) {
+                                                                    $("#divdatekuang").hide();
+                                                                });
+                                                                datapicker.on('apply.daterangepicker', function (ev, picker) {
+                                                                    var dateranges = $('#divkaohezhouqi').data("dateranges");
+                                                                    if (dateranges.length > 0) {
+                                                                        var dlkaohezhouqi = $("#dlkaohezhouqi");
+                                                                        dlkaohezhouqi.show();
+                                                                        dlkaohezhouqi.find(".list-val").html(dateranges);
+                                                                        var divkaohe = $("#divkaohe");
+                                                                        divkaohe.show();
+                                                                    }
+                                                                });
+                                                            });
+                                                        </script>
+                                                    </li>
+                                                </ul>
+                                                <script>
+                                                    $(function () {
+                                                        var divkaohe = $("#divkaohe");
+                                                        var smember_list_item = $(".smember_list_item");
+                                                        var aKaoheZhouqiClear = $("#aKaoheZhouqiClear");
+                                                        smember_list_item.click(function () {
+                                                            var dlrenyuan = $("#dlrenyuan");
+                                                            dlrenyuan.show();
+                                                            dlrenyuan.find(".list-val").html($(this).find(".smember_list_item_name").html());
+                                                            divkaohe.show();
+                                                        });
+                                                        aKaoheZhouqiClear.click(function () {//清空全部
+                                                            divkaohe.find("dl").hide();
+                                                            divkaohe.hide();
+                                                            $("#main1").show();
+                                                            $("#main").hide();
+                                                        });
+                                                        $("#divkaohe .close-btn").click(function () {//单个隐藏事件，都隐藏了隐藏父容器
+                                                            var fu = $(this).parents("dl");
+                                                            fu.hide();
+                                                            if (fu.attr("id") == "dlbaobiaoleixing") {
+                                                                $("#main1").show();
+                                                                $("#main").hide();
+                                                            }
+                                                            var dllist = divkaohe.find("dl");
+                                                            var isallhide = true;
+                                                            for (var i = 0; i < dllist.length; i++) {
+                                                                if (!$(dllist[i]).is(":hidden")) {
+                                                                    isallhide = false;
+                                                                    return;
+                                                                }
+                                                            }
+                                                            if (isallhide) {
+                                                                divkaohe.hide();
+                                                            }
+                                                        });
+                                                    });
+                                                </script>
+                                                <!--当前显示 内容标题 框-->
+                                                <div id="divkaohe" data-name="result-wrap" style="display:none;">
+                                                    <div class="okr-filter-result">
+                                                        <div class="filter-result-wrap tu-clearfix" data-name="filter-result-wrap">
+                                                            <dl id="dlkaohezhouqi" class="result-group" style="display:none;">
+                                                                <dt class="result-group-tt" data-name="result-group-tt">考核周期</dt>
+                                                                <dd class="result-group-list" data-name="result-group-list"><div class="result-group-item"><span class="list-val">2016年第一季度6月第四周报表</span><a href="javascript:;" class="close-btn tu-icon-cross" data-name="close-btn"></a></div></dd>
+                                                            </dl>
+                                                            <dl id="dlbaobiaoleixing" class="result-group" style="display:none;">
+                                                                <dt class="result-group-tt" data-name="result-group-tt">报表类型</dt>
+                                                                <dd class="result-group-list" data-name="result-group-list"><div class="result-group-item"><span class="list-val">已完成</span><a href="javascript:;" class="close-btn tu-icon-cross" data-name="close-btn"></a></div></dd>
+                                                            </dl>
+                                                            <dl id="dlrenyuan" class="result-group" style="display:none;">
+                                                                <dt class="result-group-tt" data-name="result-group-tt">人员</dt>
+                                                                <dd class="result-group-list" data-name="result-group-list"><div class="result-group-item"><span class="list-val">张三</span><a href="javascript:;" class="close-btn tu-icon-cross" data-name="close-btn"></a></div></dd>
+                                                            </dl>
+                                                            <a id="aKaoheZhouqiClear" href="javascript:;" class="clear-btn" data-name="clear-btn">清空所有</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        $(function () {
+                                            var lilist = $("#ulbaobiaoleixing").find("li");
+                                            lilist.click(function () {
+                                                var tittle = $(this).data("tittle");
+                                                if (tittle == "进行中") {
+                                                    $("#main1").show();
+                                                    $("#main").hide();
+                                                } else {
+                                                    $("#main1").hide();
+                                                    $("#main").show();
+                                                }
+                                                var dlbaobiaoleixing = $("#dlbaobiaoleixing");
+                                                dlbaobiaoleixing.show();
+                                                dlbaobiaoleixing.find(".list-val").html(tittle);
+                                                var divkaohe = $("#divkaohe");
+                                                divkaohe.show();
+                                            });
+                                        });
+                                    </script>
+                                    <div data-name="activity-list-container" class="layout-container">
+                                        <div class="activity-list-cont">
+                                            <p style="width: 600px;margin:0 auto;text-align:center;color:#8dc8ea;"><b>-计划结果-</b></p>
+                                            <div id="main1" style="width: 600px;height:400px;padding-bottom:20px;margin:0 auto;"></div>
+                                            <script type="text/javascript">
+                                                // 基于准备好的dom，初始化echarts实例
+                                                var myChart = echarts.init(document.getElementById('main1'));
+
+                                                // 指定图表的配置项和数据
+                                                option = {
+                                                    title: {
+                                                        text: '',
+                                                        subtext: '',
+                                                        x: 'center',
+                                                        y: 'bottom'
+                                                    },
+                                                    tooltip: {
+                                                        trigger: 'item',
+                                                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                                    },
+                                                    color: ['#ff7340', '#ffb140', '#ffd640', '#b3d665', '#67d489'],
+                                                    legend: {
+                                                        orient: 'horizontal',
+                                                        left: 'center',
+                                                        bottom: 0,
+                                                        data: ['优秀', '良好', '合格', '不合格', '较差']
+                                                    },
+                                                    series: [
+                                                        {
+                                                            name: '计划结果',
+
+                                                            type: 'pie',
+                                                            radius: ['50%', '70%'],
+                                                            center: ['50%', '50%'],
+                                                            data: [
+                                                                { value: 135, name: '较差' },
+                                                                { value: 234, name: '不合格' },
+                                                                { value: 310, name: '合格' },
+                                                                { value: 335, name: '良好' },
+                                                                { value: 1548, name: '优秀' },
+                                                            ],
+                                                            itemStyle: {
+                                                                normal: {
+
+                                                                    label: {
+                                                                        show: true,
+                                                                        formatter: '{b} : {d}%'
+                                                                    },
+                                                                },
+                                                                emphasis: {
+                                                                    shadowBlur: 10,
+                                                                    shadowOffsetX: 0,
+                                                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                };
+                                                // 使用刚指定的配置项和数据显示图表。
+                                                myChart.setOption(option);
+                                            </script>
+                                            <div id="main" style="width: 600px;height:400px;padding-bottom:20px;margin:0 auto;display:none;"></div>
+                                            <script type="text/javascript">
+                                                // 基于准备好的dom，初始化echarts实例
+                                                var myChart = echarts.init(document.getElementById('main'));
+
+                                                // 指定图表的配置项和数据
+                                                option = {
+                                                    title: {
+                                                        text: ''
+                                                    },
+                                                    tooltip: {
+                                                        trigger: 'axis'
+                                                    },
+                                                    legend: {
+                                                        data: ['计划完成率']
+                                                    },
+                                                    grid: {
+                                                        left: '3%',
+                                                        right: '4%',
+                                                        bottom: '3%',
+                                                        containLabel: true
+                                                    },
+                                                    toolbox: {
+                                                    },
+                                                    xAxis: {
+                                                        type: 'category',
+                                                        boundaryGap: false,
+                                                        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+
+                                                    },
+                                                    yAxis: {
+                                                        type: 'value',
+                                                        splitLine: {
+                                                            show: true,
+                                                            lineStyle: {
+                                                                type: 'dashed',
+                                                            }
+                                                        }
+                                                    },
+                                                    series: [
+                                                        {
+                                                            name: '计划完成率',
+                                                            type: 'line',
+                                                            stack: '总量',
+                                                            data: [120, 132, 101, 134, 90, 230, 210],
+                                                            color: '#2ca9d5',
+                                                            symbolSize: 10,
+                                                            itemStyle: {
+                                                                normal: {
+
+                                                                    color: '#2ca9d5',
+                                                                    lineStyle: {
+                                                                        color: '#2ca9d5',
+                                                                        width: 3,
+                                                                    }
+                                                                },
+
+                                                            },
+                                                        },
+                                                    ]
+                                                };
+                                                // 使用刚指定的配置项和数据显示图表。
+                                                myChart.setOption(option);
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

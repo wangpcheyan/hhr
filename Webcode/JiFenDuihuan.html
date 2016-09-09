@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>积分兑换</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="kinwai">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.pc.css" rel="stylesheet" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="dy-mg-20 dy-main">
+        <div class="duihuan_content">
+            <div class="am-sticky-placeholder" style="height: 42px; margin: 0px;">
+                <ul class="am-nav am-nav-tabs dy-show2 " style="margin: 0px;padding:0;">
+                    <li class="top_title"><a href="integral.html">积分</a>><a href="integral.html" style="margin:0;">我的积分</a>><span style="color:#999;">积分兑换</span></li>
+                </ul>
+            </div>
+            <div class="dh_mar_top zuzhi_btn">
+                <span class="label">按项目类别查看</span>
+                <div class="divdrop">
+                    <button type="button" class="btndrop pro_r text-left" style="width:100px;">
+                        <span class="dropText ">默认</span><span class="fa fa-angle-down list_down_icon dropicon down_icon_right"></span>
+                    </button>
+                    <ul class="dropmenu pa-left" style="display:none;">
+                        <li class="liitem ">商品类</li>
+                        <li class="liitem">旅游类</li>
+                        <li class="liitem">休假类</li>
+                        <li class="liitem">培训类</li>
+                    </ul>
+                </div>
+            </div>
+            <table cellpadding="0" cellspacing="0" class="dy-tab4 dy-ch1" >
+                <tbody>
+                    <tr>
+                        <th style="width:25%;border-right:1px solid #fafafa;">兑换项目</th>
+                        <th style="width:25%;border-right:1px solid #fafafa;">有效期</th>
+                        <th style="width:25%;border-right:1px solid #fafafa;">所需积分</th>
+                        <th style="width:25%;border-left:1px solid #fafafa;">操作</th>
+                    </tr>
+                    <tr>
+                        <td>项目名称</td>
+                        <td>2016-07-12</td>
+                        <td>30</td>
+                        <td>
+                            <a class="aDel am-btn btn dy-btn-orange" data-toggle="modal" data-target="#dhModal" href="#">兑换</a>
+                            <!--<button type="button" class="am-btn btn dy-btn-orange">兑换</button>-->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="footer_page">
+                <table class="page_content">
+                    <tr>
+                        <td>共2条记录</td>
+                        <td>
+                            <label>每页条数</label>
+                            <div class="page_num tz_page" style="display:inline-block;">
+                                <input type="text" value="20" class="ui-pg-selbox-valuetext">
+                                <i class="down fa fa-angle-down"></i>
+                                <ul class="dropdown-menu ui_pg" role="menu">
+                                    <li role="option" value="100">100</li>
+                                    <li role="option" value="50">50</li>
+                                    <li role="option" value="40">40</li>
+                                    <li role="option" value="30">30</li>
+                                    <li role="option" value="20">20</li>
+                                    <li role="option" value="10" class="selected">10</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <input type="text" value="" class="ui-pg-selbox-valuetext">
+                                <a href="#">跳转</a>
+                            </div>
+                        </td>
+                        <td class="page_up"><span><</span></td>
+                        <td class="fy_page">
+                            <div>
+                                <span>0</span>
+                                /
+                                <span>0</span>
+                            </div>
+                        </td>
+                        <td class="page_next"><span>></span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade layer_title" id="dhModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title  " id="myModalLabel">
+                        提示
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    确认要兑换选中的项目吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                        确认
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        取消
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--下拉框-->
+    <script>
+        $(function () {
+            var divdrop = $(".divdrop");
+            for (var i = 0; i < divdrop.size() ; i++) {
+                InitDrop($(divdrop[i]));
+            }
+        });
+        function InitDrop(obj) {
+            var itemGroup = $(obj);
+            var btndrop = itemGroup.find(".btndrop").eq(0);
+            var dropdownmenu = itemGroup.find(".dropmenu").eq(0);
+            var menuli = dropdownmenu.find(".liitem");
+            var dropText = itemGroup.find(".dropText").eq(0);
+            var dropicon = itemGroup.find(".dropicon").eq(0);
+            btndrop.click(function () {
+                var cur = $(this);
+                if (cur.data('active') !== 'on') {
+                    cur.data('active', 'on');
+                    dropdownmenu.show();
+                    dropicon.addClass("tran_icon");
+                    //$($trii[index]).addClass("tran_icon");
+                } else {
+                    cur.data('active', 'off');
+                    dropdownmenu.hide();
+                    dropicon.removeClass("tran_icon");
+                    divadditem.hide();
+                }
+            });
+            menuli.click(function () {
+                var itemli = $(this);
+                dropText.html(itemli.html());
+                btndrop.data('active', 'off');
+                dropdownmenu.hide();
+                dropicon.removeClass("tran_icon");
+                modal_dz.val("");
+                divadditem.hide();
+            });
+            var additem = dropdownmenu.find(".additem").eq(0);
+            var divadditem = itemGroup.find(".divadditem").eq(0);
+            additem.click(function () {
+                divadditem.show();
+            });
+            var modal_dz = divadditem.find(".modal_dz").eq(0);
+            var btnqueding = divadditem.find(".btnqueding").eq(0);
+            var btncancel = divadditem.find(".btncancel").eq(0);
+            btncancel.click(function () {
+                divadditem.hide();
+                itemGroup.show();
+                modal_dz.val("");
+                btndrop.data('active', 'off');
+                dropdownmenu.hide();
+                dropicon.removeClass("tran_icon");
+            });
+            btnqueding.click(function () {
+                dropText.html(modal_dz.val());
+                divadditem.hide();
+                itemGroup.show();
+                modal_dz.val("");
+                btndrop.data('active', 'off');
+                dropdownmenu.hide();
+                dropicon.removeClass("tran_icon");
+            });
+        }
+        //$(document).click(function (e) {
+        //    // && !$.contains($menu[0], e.target)
+        //    //alert($.inArray(e.target, $tri));
+        //    if ($.inArray(e.target, $tri) == -1) {
+        //        $drop.hide();
+        //        $tri.data('active', 'off');
+        //        $trii.removeClass("tran_icon");
+        //    }
+        //});
+    </script>
+</body>
+</html>

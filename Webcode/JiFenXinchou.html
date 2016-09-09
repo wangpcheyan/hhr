@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>薪酬查看</title>
+    <meta name="author" content="kinwai">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/style.pc.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="http://cdn.bootcss.com/selectivizr/1.0.2/selectivizr.js"></script>
+    <![endif]-->
+    <!-- Favicons -->
+    <!--html5shiv.min.js认识html5新标签 -->
+</head>
+<body>
+    <div class="jifen_body">
+        <div class="am-sticky-placeholder" style="height: 42px; margin: 0px;">
+            <ul class="am-nav am-nav-tabs dy-show2 " style="margin: 0px;padding:0;">
+                <li class="top_title"><a href="JiFenXinchou.html">薪酬</a>><span style="color:#999;padding:0 5px;">薪酬查看</span></li>
+            </ul>
+        </div>
+        <div class="plan ">
+            <div class="sidebar ">
+                <div class="yearSelect">
+                    <select name="year" id="year" class="select"></select>
+                </div>
+                <ul class="subnav">
+                    <li><a href="#">年/季</a></li>
+                    <li><a href="#">1月</a></li>
+                    <li><a href="#">2月</a></li>
+                    <li><a href="#">3月</a></li>
+                    <li><a href="#">4月</a></li>
+                    <li><a href="#">5月</a></li>
+                    <li><a href="#">6月</a></li>
+                    <li><a href="#">7月</a></li>
+                    <li><a href="#">8月</a></li>
+                    <li><a href="#">9月</a></li>
+                    <li><a href="#">10月</a></li>
+                    <li><a href="#">11月</a></li>
+                    <li><a href="#">12月</a></li>
+                </ul>
+            </div>
+            <div class="body zuzhi_list ny_mar_left" style="margin-top:40px;">
+                <div class="data">
+                    <div class="selectShowItem">
+                        <p><label for="col">显示列</label><span><input type="checkbox" class="selectAllItem">全选</span></p>
+                        <input type="checkbox" name="item" class="item" checked><span>序号</span>
+                        <input type="checkbox" name="item" class="item" checked><span>姓名</span>
+                        <input type="checkbox" name="item" class="item" checked><span>年/月</span>
+                        <input type="checkbox" name="item" class="item" checked><span>岗位名称</span>
+                        <input type="checkbox" name="item" class="item" checked><span>部门名称</span>
+                        <input type="checkbox" name="item" class="item"><span>出勤天数</span>
+                        <input type="checkbox" name="item" class="item" checked><span>基本工资</span>
+                        <input type="checkbox" name="item" class="item"><span>技能工资</span>
+                        <input type="checkbox" name="item" class="item"><span>考核工资</span>
+                        <input type="checkbox" name="item" class="item"><span>职务工资</span>
+                        <input type="checkbox" name="item" class="item" checked><span>销售提成</span>
+                        <input type="checkbox" name="item" class="item" checked><span>单品提成</span>
+                        <input type="checkbox" name="item" class="item"><span>收银提成</span>
+                        <input type="checkbox" name="item" class="item"><span>其他提成</span>
+                        <input type="checkbox" name="item" class="item" checked><span>全勤奖</span>
+                        <input type="checkbox" name="item" class="item" checked><span>其他奖项</span>
+                        <input type="checkbox" name="item" class="item" checked><span>应发合计</span>
+                        <input type="checkbox" name="item" class="item" checked><span>职称补贴</span>
+                        <input type="checkbox" name="item" class="item" checked><span>缺勤</span>
+                        <input type="checkbox" name="item" class="item" checked><span>赔付</span>
+                        <input type="checkbox" name="item" class="item" checked><span>社保</span>
+                        <input type="checkbox" name="item" class="item" checked><span>其他</span>
+                        <input type="checkbox" name="item" class="item" checked><span>其他项综合</span>
+                        <input type="checkbox" name="item" class="item" checked><span>实发工资</span>
+                        <input type="checkbox" name="item" class="item"><span>自定义项目</span>
+                        <input type="checkbox" name="item" class="item"><span>自定义项目</span>
+                        <input type="checkbox" name="item" class="item"><span>自定义项目</span>
+                        <input type="checkbox" name="item" class="item"><span>自定义项目</span>
+                    </div>
+                    <div class="more">
+                        <div class="more_bg">
+                            显示更多<img src="img/common/arrow_down.png" height="16" width="16" alt="">
+                        </div>
+                    </div>
+                    <div class="table-responsive" style="width:100%;overflow:auto;">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="check_th"><input type="checkbox" id="selectAll"></th>
+                                    <th class="toggle ">序号</th>
+                                    <th class="toggle paixu">
+                                        姓名
+                                        <div class="divPaixu">
+                                            <span class="shengxu fa fa-caret-up"></span><span class="jiangxu fa fa-caret-down"></span>
+                                        </div>
+                                    </th>
+                                    <th class="toggle paixu">
+                                        年/月
+                                        <div class="divPaixu">
+                                            <span class="shengxu fa fa-caret-up"></span><span class="jiangxu fa fa-caret-down"></span>
+                                        </div>
+                                    </th>
+                                    <th class="toggle paixu">
+                                        岗位名称
+                                        <div class="divPaixu">
+                                            <span class="shengxu fa fa-caret-up"></span><span class="jiangxu fa fa-caret-down"></span>
+                                        </div>
+                                    </th>
+                                    <th class="toggle paixu">
+                                        部门名称
+                                        <div class="divPaixu">
+                                            <span class="shengxu fa fa-caret-up"></span><span class="jiangxu fa fa-caret-down"></span>
+                                        </div>
+                                    </th>
+                                    <th class="toggle hide">出勤天数</th>
+                                    <th class="toggle paixu">
+                                        基本工资
+                                        <div class="divPaixu">
+                                            <span class="shengxu fa fa-caret-up"></span><span class="jiangxu fa fa-caret-down"></span>
+                                        </div>
+                                    </th>
+                                    <th class="toggle hide">技能工资</th>
+                                    <th class="toggle hide">考核工资</th>
+                                    <th class="toggle hide">职务工资</th>
+                                    <th class="toggle paixu">
+                                        销售提成
+                                        <div class="divPaixu">
+                                            <span class="shengxu fa fa-caret-up"></span><span class="jiangxu fa fa-caret-down"></span>
+                                        </div>
+                                    </th>
+                                    <th class="toggle paixu">
+                                        单品提成
+                                        <div class="divPaixu">
+                                            <span class="shengxu fa fa-caret-up"></span><span class="jiangxu fa fa-caret-down"></span>
+                                        </div>
+                                    </th>
+                                    <th class="toggle hide paixu">
+                                        收银提成
+                                        <div class="divPaixu">
+                                            <span class="shengxu fa fa-caret-up"></span><span class="jiangxu fa fa-caret-down"></span>
+                                        </div>
+                                    </th>
+                                    <th class="toggle hide">其它提成</th>
+                                    <th class="toggle ">全勤奖</th>
+                                    <th class="toggle ">其它奖项</th>
+                                    <th class="toggle paixu">
+                                        应发合计
+                                        <div class="divPaixu">
+                                            <span class="shengxu fa fa-caret-up"></span><span class="jiangxu fa fa-caret-down"></span>
+                                        </div>
+                                    </th>
+                                    <th class="toggle ">职称补贴</th>
+                                    <th class="toggle ">缺勤</th>
+                                    <th class="toggle">赔付</th>
+                                    <th class="toggle ">社保</th>
+                                    <th class="toggle ">其他</th>
+                                    <th class="toggle ">其他项综合</th>
+                                    <th class="toggle paixu">
+                                        实发工资
+                                        <div class="divPaixu">
+                                            <span class="shengxu fa fa-caret-up"></span><span class="jiangxu fa fa-caret-down"></span>
+                                        </div>
+                                    </th>
+                                    <th class="toggle hide">自定义项目</th>
+                                    <th class="toggle hide">自定义项目</th>
+                                    <th class="toggle hide">自定义项目</th>
+                                    <th class="toggle hide">自定义项目</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="check_th"><input class="id" type="checkbox" name="id" value="1"></td>
+                                    <td class="toggle ">序号</td>
+                                    <td class="toggle paixu">姓名</td>
+                                    <td class="toggle">年/月</td>
+                                    <td class="toggle">岗位名称</td>
+                                    <td class="toggle">部门名称</td>
+                                    <td class="toggle hide">出勤天数</td>
+                                    <td class="toggle">基本工资</td>
+                                    <td class="toggle hide">技能工资</td>
+                                    <td class="toggle hide">考核工资</td>
+                                    <td class="toggle hide">职务工资</td>
+                                    <td class="toggle ">销售提成</td>
+                                    <td class="toggle ">单品提成</td>
+                                    <td class="toggle hide">收银提成</td>
+                                    <td class="toggle hide">其它提成</td>
+                                    <td class="toggle ">全勤奖</td>
+                                    <td class="toggle ">其它奖项</td>
+                                    <td class="toggle">应发合计</td>
+                                    <td class="toggle ">职称补贴</td>
+                                    <td class="toggle ">缺勤</td>
+                                    <td class="toggle">赔付</td>
+                                    <td class="toggle ">社保</td>
+                                    <td class="toggle ">其他</td>
+                                    <td class="toggle ">其他项综合</td>
+                                    <td class="toggle">实发工资</td>
+                                    <td class="toggle hide">自定义项目</td>
+                                    <td class="toggle hide">自定义项目</td>
+                                    <td class="toggle hide">自定义项目</td>
+                                    <td class="toggle hide">自定义项目</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="footer_page">
+                    <table class="page_content">
+                        <tr>
+                            <td>共2条记录</td>
+                            <td>
+                                <label>每页条数</label>
+                                <div class="page_num tz_page" style="display:inline-block;">
+                                    <input type="text" value="20" class="ui-pg-selbox-valuetext">
+                                    <i class="down fa fa-angle-down"></i>
+                                    <ul class="dropdown-menu ui_pg" role="menu">
+                                        <li role="option" value="100">100</li>
+                                        <li role="option" value="50">50</li>
+                                        <li role="option" value="40">40</li>
+                                        <li role="option" value="30">30</li>
+                                        <li role="option" value="20">20</li>
+                                        <li role="option" value="10" class="selected">10</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" value="" class="ui-pg-selbox-valuetext">
+                                    <a href="#">跳转</a>
+                                </div>
+                            </td>
+                            <td class="page_up"><span><</span></td>
+                            <td class="fy_page">
+                                <div>
+                                    <span>0</span>
+                                    /
+                                    <span>0</span>
+                                </div>
+                            </td>
+                            <td class="page_next"><span>></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.min.js"></script>
+    <!--排序-->
+    <script>
+        $(function () {
+            var divPaixu = $(".paixu");
+            for (var i = 0; i < divPaixu.size() ; i++) {
+                InitPaixu($(divPaixu[i]));
+            }
+        });
+        function InitPaixu(cont) {
+            var content = $(cont);
+            var shengxu = cont.find(".shengxu").eq(0);
+            var jiangxu = cont.find(".jiangxu").eq(0);
+            cont.click(function () {
+                if (content.data('paixu') == 'sheng') {
+                    content.data('paixu', 'jiang');
+                    jiangxu.addClass("divPx_color");
+                    shengxu.removeClass("divPx_color");
+                } else {
+                    content.data('paixu', 'sheng');
+                    shengxu.addClass("divPx_color");
+                    jiangxu.removeClass("divPx_color");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>慧诚咨询企业管理后台 |知识管理</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="kinwai">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <script src="js/jquery.min.js"></script>
+    <link href="css/swiper-3.3.1.min.css" rel="stylesheet" />
+    <!--swiper控件-->
+    <script src="js/swiper-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/style.pc.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="jifen_body">
+        <div class="am-sticky-placeholder" style="height: 42px; margin: 0px;">
+            <ul class="am-nav am-nav-tabs dy-show2 " style="margin: 0px;padding:0;">
+                <li class="top_title"><a href="ZhishiGuanli.html" >培训管理</a>><span style="color:#999;padding:0 5px;">知识管理</span></li>
+            </ul>
+        </div>
+        <div class="zuzhi_btn">
+            <a class="btn new_btn" href="AddWenzhang.html" >添加文章</a>
+        </div>
+        <!--swiper tab 可左右滑动切换 -->
+        <div class="swiper-container wz_nav_tabs" id="swiper-container1">
+            <div id="swiper-wrapper-type" class="swiper-wrapper">
+                <div class="swiper-slide swiper_active">最新</div>
+                <div class="swiper-slide">猜你喜欢</div>
+                <div class="swiper-slide">创投</div>
+                <div class="swiper-slide">互联网</div>
+            </div>
+            <!--分类超出屏幕 向右翻页按钮-->
+            <div class="swiper-button-next"></div>
+        </div>
+        <div class="list_content" id="swiperlist">
+
+            <!-- list_body 文章列表容器 id=swiper0 对应导航分类 点击显示隐藏 -->
+            <div class="list_body " id="swiper0">
+                <!-- swiper-slide div内元素为单个文章-->
+                <div class="swiper-slide">
+                    <div class="article">
+                        <h3>面向手机，平板电脑等移动终端。它能实现触屏焦点图，触屏tab切换</h3>
+                        <div class="article_link webbox">
+                            <div class="list_img_holder flex">
+                                <div class="list_img" style="background-image: url('img/common/1.jpg');"></div>
+                            </div>
+                            <p class="zy_body">面向手机，平板电脑等移动终端。它能实现触屏焦点图，触屏tab切换面向手机，平板电脑等移动终端。它能实现触屏焦点图，触屏tab切换面向手机，平板电脑等移动终端。它能实现触屏焦点图，触屏tab切换面向手机，平板电脑等移动终端。它能实现触屏焦点图，触屏tab切换</p>
+                        </div>
+                        <div class="webbox swiper_bot">
+                            <div class="sj flex">6月5日  21：45</div>
+                            <div class="flex">电信丨酷派 手机品牌 乐视</div>
+                        </div>
+                    </div>
+                </div>
+                <!--以上为单个文章-->
+
+            </div>
+            <!-- list_body 文章列表容器 id=swiper1 对应导航分类 点击显示隐藏 -->
+            <div class="list_body " id="swiper1" style="display:none">
+
+                <!-- swiper-slide div内元素为单个文章-->
+                <!--以上为单个文章-->
+            </div>
+            <!-- list_body 文章列表容器 id=swiper2 对应导航分类 点击显示隐藏 -->
+            <div class="list_body " id="swiper2" style="display:none">
+                <!-- swiper-slide div内元素为单个文章-->
+                <!--以上为单个文章-->
+            </div>
+            <!-- list_body 文章列表容器 id=swiper3 对应导航分类 点击显示隐藏 -->
+            <div class="list_body " id="swiper3" style="display:none">
+                <!-- swiper-slide div内元素为单个文章-->
+                <!--以上为单个文章-->
+            </div>
+        </div>
+        <script>
+            //swiper导航点击 滑动
+            $(function () {
+                var Swiper1 = new Swiper('#swiper-container1', {
+                    watchSlidesProgress: true,
+                    watchSlidesVisibility: true,
+                    slidesPerView: "auto",
+                    nextButton: '.swiper-button-next',
+                    onTap: function (swiper) {
+                        //alert(swiper.clickedIndex);
+                        //Swiper1.slideTo(swiper.clickedIndex);
+                        //alert($("#swiper-wrapper-type").children().length);
+                        var slideList = $("#swiper-wrapper-type").children();
+                        slideList.removeClass("swiper_active");
+                        $(slideList[swiper.clickedIndex]).addClass("swiper_active");
+
+                        var swiperlist = $("#swiperlist").children();
+                        swiperlist.hide();
+                        $(swiperlist[swiper.clickedIndex]).show();
+                    }
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

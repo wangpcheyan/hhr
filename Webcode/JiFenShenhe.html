@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>积分审核</title>
+    <meta name="author" content="kinwai">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/style.pc.css" rel="stylesheet" />
+    <script src="js/12jquery.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="http://cdn.bootcss.com/selectivizr/1.0.2/selectivizr.js"></script>
+    <![endif]-->
+    <!-- Favicons -->
+    <!--html5shiv.min.js认识html5新标签 -->
+</head>
+<body>
+    <div class="jifen_body">
+        <div class="am-sticky-placeholder" style="height: 42px; margin: 0px;">
+            <ul class="am-nav am-nav-tabs dy-show2 " style="margin: 0px;padding:0;">
+                <li class="top_title">
+                <li class="top_title">
+                    <a href="integral.html">积分</a>><a href="integralTeam.html" style="margin:0;">积分管理</a>
+                    >
+                    <span style="color:#999;padding:0 5px;">积分审核</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="am-sticky-placeholder" style="height: 42px; margin: 0px;">
+            <div style="width:100%;border-bottom:1px solid #dddddd;">
+                <div class="btn-group webbox dy_nav_tabs jihua_nav_tabs" data-toggle="buttons">
+                    <label class="btn sh_btn1 btn-info active flex">
+                        <input type="radio" name="" id=""> 待审核
+                    </label>
+                    <label class="btn sh_btn2 btn-info flex">
+                        <input type="radio" name="" id="ytg">已通过
+                    </label>
+                    <label class="btn sh_btn3 btn-info flex">
+                        <input type="radio" name="" id="">已驳回
+                    </label>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(".sh_btn1").click(function () {
+                $(".sh_list1").show();
+                $(".sh_list2").hide();
+                $(".sh_list3").hide();
+
+            });
+            $(".sh_btn2").click(function () {
+                $(".sh_list2").show();
+                $(".sh_list1").hide();
+                $(".sh_list3").hide();
+
+            });
+            $(".sh_btn3").click(function () {
+                $(".sh_list3").show();
+                $(".sh_list2").hide();
+                $(".sh_list1").hide();
+
+            });
+        </script>
+        <div class="plan ">
+            <div class="body zuzhi_list sh_list1">
+                <div class="data">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="check_th"><input type="checkbox" id="selectAll"></th>
+                                    <th class="toggle">申请时间</th>
+                                    <th class="toggle">申请人</th>
+                                    <th class="toggle">积分项目</th>
+                                    <th class="toggle">积分标准</th>
+                                    <th class="toggle">数量</th>
+                                    <th class="toggle">奖券数</th>
+                                    <th class="toggle">积分对象</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="check_th"><input class="id" type="checkbox" name="id" value="1"></th>
+                                    <td class="taskname toggle ">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                    <td class="toggle ">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                </tr>
+                                <tr>
+                                    <th class="check_th"><input class="id" type="checkbox" name="id" value="1"></th>
+                                    <td class="taskname toggle ">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                    <td class="toggle ">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="zuzhi_btn">
+                        <a class="btn new_btn aDel" data-toggle="modal" data-target="#tgModal">审核通过</a>
+                        <a class="btn bohui_btn new_btn aDel" data-toggle="modal" data-target="#bhModal">驳回申请</a>
+
+                    </div>
+                </div>
+                <div class="footer_page">
+                    <table class="page_content">
+                        <tr>
+                            <td>共2条记录</td>
+                            <td>
+                                <label>每页条数</label>
+                                <div class="page_num tz_page" style="display:inline-block;">
+                                    <input type="text" value="20" class="ui-pg-selbox-valuetext">
+                                    <i class="down fa fa-angle-down"></i>
+                                    <ul class="dropdown-menu ui_pg" role="menu">
+                                        <li role="option" value="100">100</li>
+                                        <li role="option" value="50">50</li>
+                                        <li role="option" value="40">40</li>
+                                        <li role="option" value="30">30</li>
+                                        <li role="option" value="20">20</li>
+                                        <li role="option" value="10" class="selected">10</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" value="" class="ui-pg-selbox-valuetext">
+                                    <a href="#">跳转</a>
+                                </div>
+                            </td>
+                            <td class="page_up"><span><</span></td>
+                            <td class="fy_page">
+                                <div>
+                                    <span>0</span>
+                                    /
+                                    <span>0</span>
+                                </div>
+                            </td>
+                            <td class="page_next"><span>></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="body zuzhi_list sh_list2 " style="display:none;">
+                <div class="data">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="toggle">申请时间</th>
+                                    <th class="toggle">申请人</th>
+                                    <th class="toggle">积分项目</th>
+                                    <th class="toggle">积分标准</th>
+                                    <th class="toggle">数量</th>
+                                    <th class="toggle">奖券数</th>
+                                    <th class="toggle">积分对象</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="taskname toggle ">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                    <td class="toggle ">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                </tr>
+                                <tr>
+                                    <td class="taskname toggle ">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                    <td class="toggle ">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="footer_page">
+                    <table class="page_content">
+                        <tr>
+                            <td>共2条记录</td>
+                            <td>
+                                <label>每页条数</label>
+                                <div class="page_num tz_page" style="display:inline-block;">
+                                    <input type="text" value="20" class="ui-pg-selbox-valuetext">
+                                    <i class="down fa fa-angle-down"></i>
+                                    <ul class="dropdown-menu ui_pg" role="menu">
+                                        <li role="option" value="100">100</li>
+                                        <li role="option" value="50">50</li>
+                                        <li role="option" value="40">40</li>
+                                        <li role="option" value="30">30</li>
+                                        <li role="option" value="20">20</li>
+                                        <li role="option" value="10" class="selected">10</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" value="" class="ui-pg-selbox-valuetext">
+                                    <a href="#">跳转</a>
+                                </div>
+                            </td>
+                            <td class="page_up"><span><</span></td>
+                            <td class="fy_page">
+                                <div>
+                                    <span>0</span>
+                                    /
+                                    <span>0</span>
+                                </div>
+                            </td>
+                            <td class="page_next"><span>></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="body zuzhi_list sh_list3 " style="display:none;">
+                <div class="data">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="toggle">申请时间</th>
+                                    <th class="toggle">申请人</th>
+                                    <th class="toggle">积分项目</th>
+                                    <th class="toggle">积分标准</th>
+                                    <th class="toggle">数量</th>
+                                    <th class="toggle">奖券数</th>
+                                    <th class="toggle">积分对象</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="taskname toggle ">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                    <td class="toggle ">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                    <td class="toggle">责任人</td>
+                                </tr>
+                                <tr>
+                                    <td class="taskname toggle ">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                    <td class="toggle ">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                    <td class="toggle">配合人员</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="footer_page">
+                    <table class="page_content">
+                        <tr>
+                            <td>共2条记录</td>
+                            <td>
+                                <label>每页条数</label>
+                                <div class="page_num tz_page" style="display:inline-block;">
+                                    <input type="text" value="20" class="ui-pg-selbox-valuetext">
+                                    <i class="down fa fa-angle-down"></i>
+                                    <ul class="dropdown-menu ui_pg" role="menu">
+                                        <li role="option" value="100">100</li>
+                                        <li role="option" value="50">50</li>
+                                        <li role="option" value="40">40</li>
+                                        <li role="option" value="30">30</li>
+                                        <li role="option" value="20">20</li>
+                                        <li role="option" value="10" class="selected">10</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" value="" class="ui-pg-selbox-valuetext">
+                                    <a href="#">跳转</a>
+                                </div>
+                            </td>
+                            <td class="page_up"><span><</span></td>
+                            <td class="fy_page">
+                                <div>
+                                    <span>0</span>
+                                    /
+                                    <span>0</span>
+                                </div>
+                            </td>
+                            <td class="page_next"><span>></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade layer_title" id="tgModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title  " id="myModalLabel">
+                        提示
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    确认审核通过选中的数据吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                        确认
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        取消
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade layer_title" id="bhModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title  " id="myModalLabel">
+                        提示
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    确认审核不通过选中的数据吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                        确定
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        取消
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.min.js"></script>
+</body>
+</html>

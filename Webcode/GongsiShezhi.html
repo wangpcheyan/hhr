@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8">
+    <title>公司设置</title>
+    <meta name="author" content="kinwai">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/style.pc.css" rel="stylesheet" /><script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.min.js"></script>
+    
+</head>
+<body>
+    <div class="jifen_body">
+        <div class="am-sticky-placeholder" style="height: 42px; margin: 0px;">
+            <ul class="am-nav am-nav-tabs dy-show2 " style="margin: 0px;padding:0;">
+                <li class="top_title"><a href="#">系统管理</a>><span style="color:#999;padding:0 5px;">公司设置</span></li>
+            </ul>
+        </div>
+        <div class="xcdr_content ">
+            <div class="site_one" style="padding:20px 0 0 30px;">
+                <div class="list_title"><strong style="color:#2ac;font-size:16px;">界面配置  </strong><span>请点击按钮上传填充了要导入数据的模板格式文件。</span></div>
+                <div class="webbox">
+                    <span class="gs_label"> 请选择本企业的logo文件：</span>
+                    <div class="file-box">
+                        <input type="text" name="textfield" id="textfield" class="txt_update form-control" />
+                        <input type="button" class="btn jx_btn btn-blue" value="选择文件" />
+                        <!--上传时只显示excel文件-->
+                        <input type="file" name="fileField" class="file" id="fileField" size="28" accept="" onchange="document.getElementById('textfield').value=this.value" />
+                    </div>
+                </div>
+                <div class="xc_mar">
+                    <span style="color:#fb4c4c">logo尺寸(64px*30px)</span>
+                </div>
+                <div class="xc_mar">
+                    <span class="gs_label"> 请设置本企业网络域名：</span>
+                    <input type="text" name="textfield" id="textfield" class="txt_update form-control txt_wlym" />
+                    <span style="margin-left:10px;color:#999;">http://huihr.top</span>
+                </div>
+                <div class="configure_logo">
+                    <p id="base_upload_img_wrap">
+                        <img src="img/common/xitong_logo.png" alt="logo" />
+                    </p>
+                    <p id="base_upload_img_hide"></p>
+                </div>
+                <div class="xc_mar">
+                    <button class="btn jx_btn btn-blue" data-toggle="modal" data-target="#drModal">确认</button>
+                    <a class="btn jx_btn btn-kong" data-toggle="modal" data-target="#mrModal">恢复默认设置</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade layer_title" id="mrModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title  " id="myModalLabel">
+                        提示
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    确定要恢复默认设置吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                        确定
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        取消
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

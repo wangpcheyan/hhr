@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>个人中心-头像修改</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="kinwai">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <script src="js/12jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/style.pc.css" rel="stylesheet" />
+    <link href="css/integral-datetimepicker.css" rel="stylesheet" />
+    <style>
+        .form-control {
+            text-align: left;
+        }
+
+        .list-group-panel .list-group-heading {
+            padding: 5px 0;
+        }
+
+        .control-text {
+            line-height: 34px;
+        }
+
+        .list-group-panel .list-group-item.active, .list-group-panel .list-group-item.active:hover {
+            color: #2ca9d5;
+            border-color: #2ca9d5;
+        }
+
+            .list-group-panel .list-group-item.active, .list-group-panel .list-group-item.active:hover {
+                background: #f3f3f3;
+                color: #2ca9d5;
+                font-weight: bold;
+                border-left: 3px solid #2ca9d5;
+                border-radius: 0;
+            }
+
+        .list-group-panel .list-group-item:hover {
+            border-left: 3px solid #eee;
+        }
+
+        list-group-panel .list-group-item {
+            border-radius: 0 0 0 0 !important;
+        }
+
+        .list-group-item:last-child {
+            border-radius: 0;
+            border: none;
+            border-left: 3px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="jifen_body" style="background:#edf1f2;">
+        <div id="main" class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="list-group-block">
+                                <div class="list-group-panel">
+                                    <div class="list-group-heading">个人中心</div>
+                                    <ul class="list-group">
+                                        <li>
+                                            <a class="list-group-item " href="userEdit.html"><i class="glyphicon glyphicon-user"></i> 基础信息</a>
+                                        </li>
+                                        <li>
+                                            <a class="list-group-item active"><i class="glyphicon glyphicon-picture"></i> 头像设置</a>
+                                        </li>
+                                        <li>
+                                            <a class="list-group-item " href="AnQuanShezhi.html"><i class="glyphicon glyphicon-lock"></i> 安全设置</a>
+                                        </li>
+                                        <li>
+                                            <a class="list-group-item " href="YouxiangShezhi.html"><i class="glyphicon glyphicon-envelope"></i> 邮箱设置</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!-- /list-group-block -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="panel panel-default panel-col">
+                        <div class="panel-heading">头像</div>
+                        <div class="panel-body">
+                            <form id="settings-avatar-form" class="form-horizontal" method="post" enctype="multipart/form-data" novalidate="novalidate" data-widget-cid="widget-0">
+                                <div class="form-group">
+                                    <div class="col-md-2 control-label"><b>当前头像</b></div>
+                                    <div class="controls col-md-8 controls">
+                                        <img src="img/common/avatar.png" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-2 control-label">
+                                        <label for="form_avatar" class="required">新头像</label>
+                                    </div>
+                                    <div class="controls col-md-8 controls">
+                                        <input type="file" id="form_avatar" name="form[avatar]" required="required" accept="image/gif,image/jpeg,image/png" data-widget-cid="widget-1" data-explain="你可以上传JPG、GIF或PNG格式的文件，文件大小不能超过<strong>100.0MB</strong>。">
+                                        <p class="help-block">你可以上传JPG、GIF或PNG格式的文件，文件大小不能超过<strong>100.0MB</strong>。</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-2 control-label"></div>
+                                    <div class="controls col-md-8 controls">
+                                        <button type="submit" class="btn btn-info">上传</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

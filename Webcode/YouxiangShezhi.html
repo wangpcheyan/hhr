@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>个人中心-邮箱设置</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="kinwai">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <script src="js/12jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/style.pc.css" rel="stylesheet" />
+    <link href="css/integral-datetimepicker.css" rel="stylesheet" />
+    <style>
+        .form-control {
+            text-align: left;
+        }
+
+        .list-group-panel .list-group-heading {
+            padding: 5px 0;
+        }
+
+        .control-text {
+            line-height: 34px;
+        }
+
+        .list-group-panel .list-group-item.active, .list-group-panel .list-group-item.active:hover {
+            color: #2ca9d5;
+            border-color: #2ca9d5;
+        }
+
+            .list-group-panel .list-group-item.active, .list-group-panel .list-group-item.active:hover {
+                background: #f3f3f3;
+                color: #2ca9d5;
+                font-weight: bold;
+                border-left: 3px solid #2ca9d5;
+                border-radius: 0;
+            }
+
+        .list-group-panel .list-group-item:hover {
+            border-left: 3px solid #eee;
+        }
+
+        list-group-panel .list-group-item {
+            border-radius: 0 0 0 0 !important;
+        }
+
+        .list-group-item:last-child {
+            border-radius: 0;
+            border: none;
+            border-left: 3px solid #fff;
+        }
+
+        .tar {
+            text-align: right;
+        }
+
+        hr {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+
+        hr {
+            height: 0;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="jifen_body" style="background:#edf1f2;">
+        <div id="main" class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="list-group-block">
+                                <div class="list-group-panel">
+                                    <div class="list-group-heading">个人中心</div>
+                                    <ul class="list-group">
+                                        <li>
+                                            <a class="list-group-item " href="userEdit.html"><i class="glyphicon glyphicon-user"></i> 基础信息</a>
+                                        </li>
+                                        <li>
+                                            <a href="touxiangEdit.html" class="list-group-item"><i class="glyphicon glyphicon-picture"></i> 头像设置</a>
+                                        </li>
+                                        <li>
+                                            <a class="list-group-item " href="AnQuanShezhi.html"><i class="glyphicon glyphicon-lock"></i> 安全设置</a>
+                                        </li>
+                                        <li>
+                                            <a class="list-group-item active" ><i class="glyphicon glyphicon-envelope"></i> 邮箱设置</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!-- /list-group-block -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="panel panel-default panel-col">
+                        <div class="panel-heading">邮箱设置</div>
+                        <div class="panel-body">
+                            <form id="setting-email-form" class="form-horizontal" method="post" novalidate="novalidate" data-widget-cid="widget-0">
+                                <div class="form-group">
+                                    <div class="col-md-2 control-label"><label>当前邮箱</label></div>
+                                    <div class="col-md-8 controls">
+                                        <span class="control-text">
+                                            luochaosong@126.com
+                                            <span class="text-success">(未验证)</span>
+                                        </span>
+                                        <p class="help-block">邮箱地址未验证，<a href="#" class="btn btn-info">去验证</a></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-2 control-label"><label for="form_password" class="required">网站登录密码</label></div>
+                                    <div class="col-md-8 controls">
+                                        <input type="password" id="form_password" name="form[password]" required="required" class="form-control" data-widget-cid="widget-1" data-explain="设置新的登录邮箱，需要校验当前的网站登录密码">
+                                        <p class="help-block">设置新的邮箱，需要校验当前的网站登录密码</p>
+                                    </div>
+                                </div>
+                                <!--错误时添加 class=  has-error-->
+                                <div class="form-group has-error">
+                                    <div class="col-md-2 control-label"><label for="form_email" class="required">新邮箱</label></div>
+                                    <div class="col-md-8 controls">
+                                        <input type="text" id="form_email"  required="required" class="form-control" >
+                                        <div class="help-block" style=""><span class="text-danger">请输入新邮箱</span></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-2 control-label"></div>
+                                    <div class="col-md-8 controls">
+                                        <button id="email-save-btn"  type="submit" class="btn btn-info">提交</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,467 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>我的积分</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="kinwai">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <script src="js/12jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/style.pc.css" rel="stylesheet" />
+    <link href="css/integral-datetimepicker.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="dy-mg-20 dy-main" style="min-height: 334px;">
+        <div class="am-sticky-placeholder" style="height: 42px; margin: 0px;">
+            <ul class="am-nav am-nav-tabs dy-show2 " style="margin: 0px;padding:0;">
+                <li class="btn_nav_jifen">
+                    <a class="btn " data-toggle="modal" data-target="#myModal">积分申请</a>
+                </li>
+                <li class="top_title"><a href="integral.html">积分</a>><a href="integral.html" style="margin:0;">我的积分</a>><span style="color:#999;">积分明细</span></li>
+            </ul>
+        </div>
+        <div class="dy-inte am-cf dy-txt-center">
+            <div class="am-fl dy-chart1">
+                <span class="bits-title">工作积分</span>
+                <span class="dy-s1 dy-bg1 am-round" id="bits" title="134">134</span>
+                <div class="dy-sel1">
+                    <button type="submit" class="am-btn dy-btn-blue form_datetime" data-date="2016-07" id="widget">本月积分 <i class="am-icon-caret-down"></i></button>
+                </div>
+            </div>
+            <div class="am-fl dy-chart1">
+                <span class="bits-title">基础分</span>
+                <span class="dy-s1 dy-bg1 am-round" id="bits" title="134">134</span>
+                <div class="dy-sel1">
+                    <button type="submit" class="am-btn dy-btn-blue form_datetime" data-date="2016-07" id="widget2">本月积分 <i class="am-icon-caret-down"></i></button>
+                </div>
+            </div><div class="am-fl dy-chart1">
+                <span class="bits-title">奖励分</span>
+                <span class="dy-s1 dy-bg1 am-round" id="bits" title="134">134</span>
+                <div class="dy-sel1">
+                    <button type="submit" class="am-btn dy-btn-blue form_datetime" data-date="2016-07" id="widget3">本月积分 <i class="am-icon-caret-down"></i></button>
+                </div>
+            </div><div class="am-fl dy-chart1">
+                <span class="bits-title">福利分</span>
+                <span class="dy-s1 dy-bg1 am-round" id="bits" title="134">134</span>
+                <div class="dy-sel1">
+                    <button type="submit" class="am-btn dy-btn-blue form_datetime" data-date="2016-07" id="widget4">本月积分 <i class="am-icon-caret-down"></i></button>
+                </div>
+            </div><div class="am-fl dy-chart1">
+                <span class="bits-title">价值总分</span>
+                <span class="dy-s1 dy-bg1 am-round" id="bits" title="134">134</span>
+                <div class="dy-sel1">
+                    <button type="submit" class="am-btn dy-btn-blue form_datetime" data-date="2016-07" id="widget5">本月积分 <i class="am-icon-caret-down"></i></button>
+                </div>
+            </div><div class="am-fl dy-chart1">
+                <span class="bits-title">奖券数量</span>
+                <span class="dy-s1 dy-bg1 am-round" id="bits" title="134">134</span>
+                <div class="dy-sel1">
+                    <button type="submit" class="am-btn dy-btn-blue form_datetime" data-date="2016-07" id="widget6">本月积分 <i class="am-icon-caret-down"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="mixi_title">
+            <span>积分明细</span>
+        </div>
+        <div style="width:100%;border-bottom:1px solid #dddddd;">
+            <div class="btn-group webbox dy_nav_tabs" data-toggle="buttons">
+                <label class="btn btn-info active flex">
+                    <input type="radio" name="options" id="option1"> 工作分
+                </label>
+                <label class="btn btn-info flex">
+                    <input type="radio" name="options" id="option2"> 基础分
+                </label>
+                <label class="btn btn-info flex">
+                    <input type="radio" name="options" id="option3"> 奖励分
+                </label>
+                <label class="btn btn-info flex">
+                    <input type="radio" name="options" id="option4"> 福利分
+                </label>
+                <label class="btn btn-info flex">
+                    <input type="radio" name="options" id="option5"> 奖券
+                </label>
+                <label class="btn btn-info flex" id="qiehuan">
+                    <input type="radio" name="options" id="option6"> 奖/罚
+                </label>
+            </div>
+        </div>
+        <!--id名称list1添加classs名称hidden隐藏-->
+        <div id="list1">
+            <table cellpadding="0" cellspacing="0" class="dy-tab4 dy-ch1">
+                <tbody>
+                    <tr>
+                        <th style="width:10%;border-right:1px solid #fafafa;">日期</th>
+                        <th style="width:10%;border-right:1px solid #fafafa;">积分类型</th>
+                        <th style="width:10%;border-right:1px solid #fafafa;">积分种类</th>
+                        <th class="text-left" style="width:40%;border-right:1px solid #fafafa;">积分项目</th>
+                        <th style="width:15%;border-right:1px solid #fafafa;">积分标准</th>
+                        <th style="width:10%;border-right:1px solid #fafafa;">数量</th>
+                        <th style="width:10%;border-left:1px solid #fafafa;">分值合计</th>
+                    </tr>
+                    <tr>
+                        <td>2016-07-12 11:40</td>
+                        <td>积分类型</td>
+                        <td>积分种类</td>
+                        <td class="text-left">积分项目名称</td>
+                        <td>积分标准</td>
+                        <td>30</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>2016-07-12 11:40</td>
+                        <td>积分类型</td>
+                        <td>积分种类</td>
+                        <td class="text-left">积分项目名称</td>
+                        <td>积分标准</td>
+                        <td>30</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>2016-07-12 11:40</td>
+                        <td>积分类型</td>
+                        <td>积分种类</td>
+                        <td class="text-left">积分项目名称</td>
+                        <td>积分标准</td>
+                        <td>30</td>
+                        <td>30</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!--奖/罚列表添加classs名称hidden隐藏-->
+        <div id="list2" class="hidden">
+            <table cellpadding="0" cellspacing="0" class="dy-tab4 dy-ch1">
+                <tbody>
+                    <tr>
+                        <th style="width:20%;border-right:1px solid #fafafa;">日期</th>
+                        <th style="width:20%;border-right:1px solid #fafafa;">奖/罚对象</th>
+                        <th style="width:30%;border-right:1px solid #fafafa;">奖/罚事由</th>
+                        <th style="width:20%;border-left:1px solid #fafafa;">奖/罚分值</th>
+                    </tr>
+                    <tr>
+                        <td>2016-07-12 11:40</td>
+                        <td>系统行为</td>
+                        <td>查看积分规则</td>
+                        <td>查看积分规则</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="footer_page">
+            <table class="page_content">
+                <tr>
+                    <td>共2条记录</td>
+                    <td>
+                        <label>每页条数</label>
+                        <div class="page_num tz_page" style="display:inline-block;">
+                            <input type="text" value="20" class="ui-pg-selbox-valuetext">
+                            <i class="down fa fa-angle-down"></i>
+                            <ul class="dropdown-menu ui_pg" role="menu">
+                                <li role="option" value="100">100</li>
+                                <li role="option" value="50">50</li>
+                                <li role="option" value="40">40</li>
+                                <li role="option" value="30">30</li>
+                                <li role="option" value="20">20</li>
+                                <li role="option" value="10" class="selected">10</li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <input type="text" value="" class="ui-pg-selbox-valuetext">
+                            <a href="#">跳转</a>
+                        </div>
+                    </td>
+                    <td class="page_up"><span><</span></td>
+                    <td class="fy_page">
+                        <div>
+                            <span>0</span>
+                            /
+                            <span>0</span>
+                        </div>
+                    </td>
+                    <td class="page_next"><span>></span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        积分申请
+                    </h4>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="tc_content">
+                            <div class="tc_drop">
+                                <span class="tc_drop_title">申请类型</span>
+                                <div class="divdrop">
+                                    <button type="button" class="btndrop pos_r" style="width:200px;">
+                                        <span class="dropText">申请类型</span> <span class="fa fa-angle-down list_down_icon dropicon  down_icon_right"></span>
+                                    </button>
+                                    <ul class="dropmenu" style="display:none;">
+                                        <li class="liitem"><span class="dis_span">加分</span></li>
+                                        <li class="liitem"><span class="dis_span">奖分</span></li>
+                                        <li class="liitem"><span class="dis_span">扣分</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tc_drop">
+                                <span class="tc_drop_title">
+                                    分值种类
+                                </span>
+                                <div class="divdrop">
+                                    <button type="button" class="btndrop pos_r" style="width:200px;">
+                                        <span class="dropText">分值种类</span> <span class="fa fa-angle-down list_down_icon dropicon  down_icon_right"></span>
+                                    </button>
+                                    <ul class="dropmenu" style="display:none;">
+                                        <li class="liitem"><span class="dis_span">工作积分</span></li>
+                                        <li class="liitem"><span class="dis_span">福利积分</span></li>
+                                        <li class="liitem"><span class="dis_span">奖励积分</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tc_drop">
+                                <span class="tc_drop_title">
+                                    选择项目
+                                </span>
+                                <div class="divdrop">
+                                    <button type="button" class="btndrop pos_r" style="width:200px;">
+                                        <span class="dropText">选择项目</span> <span class="fa fa-angle-down list_down_icon dropicon  down_icon_right"></span>
+                                    </button>
+                                    <!--当管理员登陆状态时，显示修改 和删除 ，普通状态时 操作按钮为隐藏-->
+                                    <ul class="dropmenu" style="display:none;">
+                                        <li class="liitem  webbox"><span class="dis_span flex">工作积分</span><a class="flex fa fa-pencil" title="编辑"></a><a class="flex fa fa-close" title="删除"></a></li>
+                                        <li class="liitem webbox"><span class="dis_span flex">福利积分</span><a class="flex fa fa-pencil" title="编辑"></a><a class="flex fa fa-close" title="删除"></a></li>
+                                        <li class="liitem webbox"><span class="dis_span flex">奖励积分</span><a class="flex fa fa-pencil" title="编辑"></a><a class="flex fa fa-close" title="删除"></a></li>
+                                        <li class="additem new_active"><button type="button">添加项目</button></li>
+                                        <!--修改哪个项的就在哪个项的下方显示  添加项目时在最下方显示-->
+                                        <li class="hover_none">
+                                            <div class="divadditem webbox" style="display:none;">
+                                                <input class="modal_dz addinput flex" name="start" type="text" placeholder="新建分类" required>
+                                                <a class="btnqueding flex fa fa-check" title="确认"></a>
+                                                <a class="btncancel flex fa fa-close" title="取消"></a>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <p>
+                                <span>分值</span>
+                                <input class="start form-control" name="start" type="text" placeholder="输入分值" required>
+                            </p>
+                            <p>
+                                <span>数量</span>
+                                <input class="start form-control" name="start" type="text" placeholder="输入数量" required>
+                            </p>
+                            <div class="tc_drop">
+                                <span class="tc_drop_title">奖券</span>
+                                <div class="divdrop">
+                                    <button type="button" class="btndrop pos_r" style="width:200px;">
+                                        <span class="dropText">0</span> <span class="fa fa-angle-down list_down_icon dropicon  down_icon_right"></span>
+                                    </button>
+                                    <ul class="dropmenu" style="display:none;">
+                                        <li class="liitem"><span class="dis_span">0</span></li>
+                                        <li class="liitem"><span class="dis_span">1</span></li>
+                                        <li class="liitem"><span class="dis_span">2</span></li>
+                                        <li class="liitem"><span class="dis_span">3</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tc_drop">
+                                <span class="tc_drop_title">实施对象</span>
+                                <div class="divdrop">
+                                    <button type="button" class="btndrop pos_r" style="width:200px;">
+                                        <span class="dropText">实施对象</span> <span class="fa fa-angle-down list_down_icon dropicon  down_icon_right"></span>
+                                    </button>
+                                    <ul class="dropmenu" style="display:none;">
+                                        <li class="liitem"><span class="dis_span">实施对象</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tc_drop">
+                                <span class="tc_drop_title">审核人</span>
+                                <div class="divdrop">
+                                    <button type="button" class="btndrop pos_r" style="width:200px;">
+                                        <span class="dropText">审核人</span> <span class="fa fa-angle-down list_down_icon dropicon  down_icon_right"></span>
+                                    </button>
+                                    <ul class="dropmenu" style="display:none;">
+                                        <li class="liitem"><span class="dis_span">审核人</span></li>
+                                        <li class="liitem"><span class="dis_span">审核人</span></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tc_drop">
+                                <span class="tc_drop_title">审批人</span>
+                                <div class="divdrop">
+                                    <button type="button" class="btndrop pos_r" style="width:200px;">
+                                        <span class="dropText">审批人</span> <span class="fa fa-angle-down list_down_icon dropicon  down_icon_right"></span>
+                                    </button>
+                                    <ul class="dropmenu" style="display:none;">
+                                        <li class="liitem"><span class="dis_span">审批人</span></li>
+                                        <li class="liitem"><span class="dis_span">审批人</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" disabled="" class="add btn btn-default" id="saveAdd">保存并继续增加</button>
+                        <input type="submit" class="performanceAdd btn btn-info" value="确定">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            取消
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var widget = $('#widget');
+            widget.datetimepicker({ format: 'yyyy-mm', startView: 3, minView: 3, autoclose: 1, language: 'zh-CN' }).on('hide', function () {
+                var month = widget.data('date'); widget.text(month);
+                get_bits(month);
+            });
+            var widget2 = $('#widget2');
+            widget2.datetimepicker({ format: 'yyyy-mm', startView: 3, minView: 3, autoclose: 1, language: 'zh-CN' }).on('hide', function () {
+                var month = widget2.data('date'); widget2.text(month);
+                get_bits(month);
+            });
+            var widget3 = $('#widget3');
+            widget3.datetimepicker({ format: 'yyyy-mm', startView: 3, minView: 3, autoclose: 1, language: 'zh-CN' }).on('hide', function () {
+                var month = widget3.data('date'); widget3.text(month);
+                get_bits(month);
+            });
+            var widget4 = $('#widget4');
+            widget4.datetimepicker({ format: 'yyyy-mm', startView: 3, minView: 3, autoclose: 1, language: 'zh-CN' }).on('hide', function () {
+                var month = widget4.data('date'); widget4.text(month);
+                get_bits(month);
+            });
+            var widget5 = $('#widget5');
+            widget5.datetimepicker({ format: 'yyyy-mm', startView: 3, minView: 3, autoclose: 1, language: 'zh-CN' }).on('hide', function () {
+                var month = widget5.data('date'); widget5.text(month);
+                get_bits(month);
+            });
+            var widget6 = $('#widget6');
+            widget6.datetimepicker({ format: 'yyyy-mm', startView: 3, minView: 3, autoclose: 1, language: 'zh-CN' }).on('hide', function () {
+                var month = widget6.data('date'); widget6.text(month);
+                get_bits(month);
+            });
+
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 40) {    //垂直滚动条钓offset 大于90时。
+                    $(".dy-show2 ").addClass("pos_fix");
+                } else {
+                    $(".dy-show2 ").removeClass("pos_fix");
+                }
+            });
+
+            $(".btn-info").click(function () {
+                var curid = $(this).attr("id");
+                if (curid == "qiehuan") {
+                    $("#list1").addClass("hidden");
+                    $("#list2").removeClass("hidden");
+                } else {
+                    $("#list2").addClass("hidden");
+                    $("#list1").removeClass("hidden");
+                }
+            });
+        });
+    </script>
+    <!--下拉框-->
+    <script>
+        $(function () {
+            var divdrop = $(".divdrop");
+            for (var i = 0; i < divdrop.size() ; i++) {
+                InitDrop($(divdrop[i]));
+            }
+        });
+        function InitDrop(obj) {
+            var itemGroup = $(obj);
+            var btndrop = itemGroup.find(".btndrop").eq(0);
+            var dropdownmenu = itemGroup.find(".dropmenu").eq(0);
+            var menuli = dropdownmenu.find(".liitem");
+            var dropText = itemGroup.find(".dropText").eq(0);
+            var dropicon = itemGroup.find(".dropicon").eq(0);
+            var itemspan = menuli.find("span")
+            btndrop.click(function () {
+                var cur = $(this);
+                if (cur.data('active') !== 'on') {
+                    cur.data('active', 'on');
+                    dropdownmenu.show();
+                    dropicon.addClass("tran_icon");
+                    //$($trii[index]).addClass("tran_icon");
+                } else {
+                    cur.data('active', 'off');
+                    dropdownmenu.hide();
+                    dropicon.removeClass("tran_icon");
+                    divadditem.hide();
+                }
+            });
+            itemspan.click(function () {
+                var itemli = $(this);
+                dropText.html(itemli.html());
+                btndrop.data('active', 'off');
+                dropdownmenu.hide();
+                dropicon.removeClass("tran_icon");
+                modal_dz.val("");
+                divadditem.hide();
+            });
+            var additem = dropdownmenu.find(".additem").eq(0);
+            var divadditem = itemGroup.find(".divadditem").eq(0);
+            additem.click(function () {
+                divadditem.show();
+            });
+            var modal_dz = divadditem.find(".modal_dz").eq(0);
+            var btnqueding = divadditem.find(".btnqueding").eq(0);
+            var btncancel = divadditem.find(".btncancel").eq(0);
+            btncancel.click(function () {
+                divadditem.hide();
+                itemGroup.show();
+                modal_dz.val("");
+                btndrop.data('active', 'off');
+                dropdownmenu.hide();
+                dropicon.removeClass("tran_icon");
+            });
+            btnqueding.click(function () {
+                dropText.html(modal_dz.val());
+                divadditem.hide();
+                itemGroup.show();
+                modal_dz.val("");
+                btndrop.data('active', 'off');
+                dropdownmenu.hide();
+                dropicon.removeClass("tran_icon");
+            });
+        }
+        //$(document).click(function (e) {
+        //    // && !$.contains($menu[0], e.target)
+        //    //alert($.inArray(e.target, $tri));
+        //    if ($.inArray(e.target, $tri) == -1) {
+        //        $drop.hide();
+        //        $tri.data('active', 'off');
+        //        $trii.removeClass("tran_icon");
+        //    }
+        //});
+    </script>
+</body>
+</html>

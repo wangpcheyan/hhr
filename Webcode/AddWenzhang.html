@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>培训管理-知识管理-添加文章</title>
+    <meta name="author" content="kinwai">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/style.pc.css" rel="stylesheet" />
+    <script src="js/12jquery.min.js"></script>
+</head>
+<body>
+    <div class="jifen_body">
+        <div class="am-sticky-placeholder" style="height: 42px; margin: 0px;">
+            <ul class="am-nav am-nav-tabs dy-show2 " style="margin: 0px;padding:0;">
+                <li class="top_title"><a href="ZhishiGuanli.html">培训管理</a>><a href="ZhishiGuanli.html" style="margin:0;">知识管理</a>><span style="color:#999;padding:0 5px;">添加文章</span></li>
+            </ul>
+        </div>
+        <div class="wenzhang_content pos_r">
+            <div class="txt_head webbox" style="width:492px;">
+                <div class="flex" style="padding: 10px 0px 10px; width:60px;display:inline-block;">文章标题</div>
+                <div class="txt_title flex">
+                    <input class="flex " name="" type="text" placeholder="请输入文章标题" required>
+                </div>
+            </div>
+            <div class="webbox"  style="width:492px; margin-bottom:20px;">
+                <div class="flex" style="padding: 10px 0px 10px; width:60px;display:inline-block;">文章分类</div>
+                <div class="divdrop" style="border-radius:0;border-bottom:1px solid #cdcdcd;">
+                    <button type="button" class="addtxtbtn btndrop text-left pos_r" style="width:260px;">
+                        <span class="dropText"></span> <span class="fa fa-angle-down list_down_icon dropicon  down_icon_right"></span>
+                    </button>
+                    <!--当管理员登陆状态时，显示修改 和删除 ，普通状态时 操作按钮为隐藏-->
+                    <ul class="dropmenu pa-left" style="display:none; width:260px;">
+                        <li style="border-bottom:1px solid #cdcdcd;">
+                            所有分类
+                        </li>
+                        <li class="hoverli">
+                            <div class="webbox fl_nav">
+                                <span class="dis_span flex ">分类未修改样式</span>
+                                <a class="flex fa fa-pencil btn_edti" title="编辑"></a>
+                                <a class="flex fa fa-close" title="删除"></a>
+                            </div>
+                            <div class="text_fl webbox" style="display:none;">
+                                <input class="form-control flex" name="start" type="text" placeholder="此处为修改样式" required>
+                                <a class="btnqueding flex fa fa-check" title="确认"></a>
+                                <a class="btncancel flex fa fa-close" title="取消"></a>
+                            </div>
+                        </li>
+                        <!--一下为点击修改后的样式显示-->
+                        <li class="hoverli txt_xy_fl">
+                            <div class="webbox fl_nav" style="display:none;">
+                                <span class="dis_span flex ">分类管理</span>
+                                <a class="flex fa fa-pencil btn_edti" title="编辑"></a>
+                                <a class="flex fa fa-close" title="删除"></a>
+                            </div>
+                            <div class="webbox">
+                                <input class="form-control flex" name="start" type="text" placeholder="此处为修改样式" required>
+                                <a class="btnqueding flex fa fa-check" title="确认"></a>
+                                <a class="btncancel flex fa fa-close" title="取消"></a>
+                            </div>
+                        </li>
+                        <li class="additem new_active"><button type="button">添加分类</button></li>
+                        <!--修改哪个项的就在哪个项的下方显示  添加项目时在最下方显示-->
+                        <li class="hover_none">
+                            <div class="divadditem webbox" style="display:none;">
+                                <input class="modal_dz form-control addinput flex" name="start" type="text" placeholder="新建分类" required>
+                                <a class="btnqueding flex fa fa-check" title="确认"></a>
+                                <a class="btncancel flex fa fa-close" title="取消"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex" style="padding: 10px 0px 10px; width:60px;display:inline-block;">文章来源</div>
+                <div class="divdrop" style="border-radius:0;border-bottom:1px solid #cdcdcd;">
+                    <button type="button" class="addtxtbtn btndrop text-left pos_r" style="width:100px;">
+                        <span class="dropText"></span> <span class="fa fa-angle-down list_down_icon dropicon  down_icon_right"></span>
+                    </button>
+                    <ul class="dropmenu pa-left" style="display:none;">
+                        <li class="liitem">网络</li>
+                        <li class="liitem">原创</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="file_btn webbox">
+                <a href="javascript:;" class="a-upload flex">
+                    <!--上传的图片在这显示-->
+                    <!--<img src="img/login/qrcode-big.png" />-->
+                    <input type="file" name="" id="">点击上传封面图片
+                </a>
+                <div class="ts_text flex">
+                    <p >提示：图片体积必须2MB以内，图片格式JPG、PNG、Gif.<br/>建议尺寸600x500像素</p>
+                </div>
+            </div>
+
+
+
+
+            <!--这是富文本编辑器的官网http://ueditor.baidu.com/website/index.html。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。-->
+            <!-- 加载编辑器的容器 -->
+            <script id="container" name="content" type="text/plain">
+                这里写你的初始化内容
+            </script>
+            <!-- 配置文件 -->
+            <script type="text/javascript" src="plugs/ueditor/ueditor.config.js"></script>
+            <!-- 编辑器源码文件 -->
+            <script type="text/javascript" src="plugs/ueditor/ueditor.all.js"></script>
+            <!-- 实例化编辑器 -->
+            <script type="text/javascript">
+                var ue = UE.getEditor('container');
+            </script>
+            <div class="zuzhi_btn" style="text-align:right;">
+                <a class="btn new_btn bohui_btn aDel">取消</a>
+                <a class="btn  new_btn aDel">提交</a>
+            </div>
+        </div>
+    </div>
+    <!--下拉框-->
+    <script>
+        $(function () {
+            var divdrop = $(".divdrop");
+            for (var i = 0; i < divdrop.size() ; i++) {
+                InitDrop($(divdrop[i]));
+            }
+        });
+        function InitDrop(obj) {
+            var itemGroup = $(obj);
+            var btndrop = itemGroup.find(".btndrop").eq(0);
+            var dropdownmenu = itemGroup.find(".dropmenu").eq(0);
+            var menuli = dropdownmenu.find(".liitem");
+            var dropText = itemGroup.find(".dropText").eq(0);
+            var dropicon = itemGroup.find(".dropicon").eq(0);
+            btndrop.click(function () {
+                var cur = $(this);
+                if (cur.data('active') !== 'on') {
+                    cur.data('active', 'on');
+                    dropdownmenu.show();
+                    dropicon.addClass("tran_icon");
+                    //$($trii[index]).addClass("tran_icon");
+                } else {
+                    cur.data('active', 'off');
+                    dropdownmenu.hide();
+                    dropicon.removeClass("tran_icon");
+                    divadditem.hide();
+                }
+            });
+            menuli.click(function () {
+                var itemli = $(this);
+                dropText.html(itemli.html());
+                btndrop.data('active', 'off');
+                dropdownmenu.hide();
+                dropicon.removeClass("tran_icon");
+                modal_dz.val("");
+                divadditem.hide();
+            });
+            var additem = dropdownmenu.find(".additem").eq(0);
+            var divadditem = itemGroup.find(".divadditem").eq(0);
+            additem.click(function () {
+                divadditem.show();
+            });
+            var modal_dz = divadditem.find(".modal_dz").eq(0);
+            var btnqueding = divadditem.find(".btnqueding").eq(0);
+            var btncancel = divadditem.find(".btncancel").eq(0);
+            btncancel.click(function () {
+                divadditem.hide();
+                itemGroup.show();
+                modal_dz.val("");
+                btndrop.data('active', 'off');
+                dropdownmenu.hide();
+                dropicon.removeClass("tran_icon");
+            });
+            btnqueding.click(function () {
+                dropText.html(modal_dz.val());
+                divadditem.hide();
+                itemGroup.show();
+                modal_dz.val("");
+                btndrop.data('active', 'off');
+                dropdownmenu.hide();
+                dropicon.removeClass("tran_icon");
+            });
+        }
+        //$(document).click(function (e) {
+        //    // && !$.contains($menu[0], e.target)
+        //    //alert($.inArray(e.target, $tri));
+        //    if ($.inArray(e.target, $tri) == -1) {
+        //        $drop.hide();
+        //        $tri.data('active', 'off');
+        //        $trii.removeClass("tran_icon");
+        //    }
+        //});
+    </script>
+</body>
+</html>
